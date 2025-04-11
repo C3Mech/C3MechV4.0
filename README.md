@@ -20,7 +20,7 @@ Species dictionary of C3Mech can be generated in this directory.
 
 ### SUBMECHANISMS:
 This directory includes all the latest (work-in-progress) submechanisms of each group. 
-SOURCE-C3Mech.THERM/.TRAN are the only THERM/TRAN files to edit. write-species.py in PREPROCESSOR will read these files and generate "cleaned" THERM/TRAN files based on species included in given compiled mechanism.
+SOURCE-C3Mech.THERM/.TRAN are the only THERM/TRAN files to edit. write-modulesandspecies.py in PREPROCESSOR will read these files and generate "cleaned" THERM/TRAN files based on species included in given compiled mechanism. Indications on the recommended modules for different fuel types are found in PREPROCESSOR/README.md
 
 ### PREPROCESSOR: 
 Mechanism compile can be done in this directory. Submechanisms and thermochemistry/transport propaties will be extracted from SUBMECHANISMS directory. Detailed instructions are found in the corresponding README.md file
