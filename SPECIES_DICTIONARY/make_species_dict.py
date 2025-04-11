@@ -835,7 +835,7 @@ class SpeciesDict:
       excited.append(primary_key[1])
       multiplicity.append(primary_key[2])
       lumped.append(cur_dict['lumped'])
-      stereochemistry.append(cur_dict['stereochemistry'])
+      stereochemistry.append(cur_dict['rdkit_stereochemistry'])
 
     data = {
         'model_name': model_names,
@@ -844,7 +844,7 @@ class SpeciesDict:
         'excited': excited,
         'multiplicity': multiplicity,
         'lumped': lumped,
-        'stereochemistry': stereochemistry
+        'rdkit_stereochemistry': stereochemistry
     }
     df = pandas.DataFrame.from_dict(data)
     if (set_index):
@@ -857,7 +857,7 @@ class SpeciesDict:
               index=False,
               columns=[
                   "model_name", "inchi", "smiles", "excited", "multiplicity",
-                  "lumped", "stereochemistry"
+                  "lumped", "rdkit_stereochemistry"
               ])
     return df
 
@@ -1377,7 +1377,7 @@ def remove_stereolayer(inchi):
 
 
 def check_stereochemistry(df):
-  df_stereo = df.loc[df['stereochemistry'] == 0].copy()
+  df_stereo = df.loc[df['rdkit_stereochemistry'] == 0].copy()
   table = str.maketrans(dict.fromkeys('/\\-+'))
   df_stereo['smiles'] = df_stereo['smiles'].apply(
       lambda smiles: smiles.translate(table))
@@ -1427,7 +1427,7 @@ def read_csv_species_dict(csv_filename, species_list, fatal_error_only,
   check_file = Path(csv_filename)
   required_columns = [
       "model_name", "inchi", "smiles", "excited", "multiplicity", "lumped",
-      "stereochemistry"
+      "rdkit_stereochemistry"
   ]
   if check_file.is_file():
     print("reading '" + csv_filename + "'")
@@ -1445,7 +1445,7 @@ def read_csv_species_dict(csv_filename, species_list, fatal_error_only,
     check_numeric(df, 'excited')
     check_numeric(df, 'multiplicity')
     check_numeric(df, 'lumped')
-    check_numeric(df, 'stereochemistry')
+    check_numeric(df, 'rdkit_stereochemistry')
 
     valid_excited = [0, 1]
     check_valid(df, 'excited', valid_excited,
@@ -1460,7 +1460,7 @@ def read_csv_species_dict(csv_filename, species_list, fatal_error_only,
                 "species are either lumped (1) or not (0)")
     valid_stereochemistry = [0, 1]
     check_valid(
-        df, 'stereochemistry', valid_stereochemistry,
+        df, 'rdkit_stereochemistry', valid_stereochemistry,
         "the stereochemistry information is either RDKit-compatible (1) or not (0)"
     )
     if (fatal_error_only):
@@ -1506,7 +1506,7 @@ def read_csv_species_dict(csv_filename, species_list, fatal_error_only,
       check_valid(df_duplicates, 'excited', [0],
                   "excited species are not expected to be lumped")
       check_valid(
-          df_duplicates, 'stereochemistry', [1],
+          df_duplicates, 'rdkit_stereochemistry', [1],
           "stereochemistry must be RDKit-compatible for lumped species")
       if (show_lumped):
         print("\n\nThe following species are lumped:")
@@ -1743,7 +1743,7 @@ def make_species_dictionary_itv(thermochemistry_filename,
                   itv_canonical2data[primary_key]['lumped'] = 0
                 else:
                   itv_canonical2data[primary_key]['lumped'] = 1
-                itv_canonical2data[primary_key]['stereochemistry'] = 1
+                itv_canonical2data[primary_key]['rdkit_stereochemistry'] = 1
                 smiles_lst = list(species_name2smiles[itv_name].keys())
                 itv_canonical2data[primary_key]['smiles'] = smiles_lst[0]
                 itv_not_found[itv_name] = 0
@@ -1772,7 +1772,7 @@ def make_species_dictionary_itv(thermochemistry_filename,
                   itv_canonical2data[primary_key]['lumped'] = 0
                 else:
                   itv_canonical2data[primary_key]['lumped'] = 1
-                itv_canonical2data[primary_key]['stereochemistry'] = 1
+                itv_canonical2data[primary_key]['rdkit_stereochemistry'] = 1
                 smiles_lst = list(species_name2smiles[itv_name].keys())
                 smiles_count = 0
                 for tmp_inchi in species_name2inchi[itv_name]:
@@ -1848,7 +1848,7 @@ def make_species_dictionary_itv(thermochemistry_filename,
             itv_canonical2data[primary_key]['lumped'] = 0
           else:
             itv_canonical2data[primary_key]['lumped'] = 1
-          itv_canonical2data[primary_key]['stereochemistry'] = 1
+          itv_canonical2data[primary_key]['rdkit_stereochemistry'] = 1
           smiles_lst = list(species_name2smiles[itv_name].keys())
           itv_canonical2data[primary_key]['smiles'] = smiles_lst[inchi_count]
           count_no_overlap[itv_name] = 1
@@ -1985,22 +1985,34 @@ def set_RDKit_drawing_option():
 def get_tex_begin_and_end(title, authors, sha, tex_opts):
   species_dict_begin = [
       "\\let\\mypdfximage\\pdfximage\n",
-      "\\def\\pdfximage{\\immediate\\mypdfximage}\n", "\n",
-      "\\documentclass[a4paper,fontsize=7pt]{scrartcl}\n", "\n",
-      "\\usepackage[english]{babel}\n", "\\usepackage{xurl}\n",
-      "\\usepackage{lmodern}\n", "\\usepackage[none]{hyphenat}\n",
-      "\\usepackage{graphicx}\n", "\\renewcommand{\\baselinestretch}{" +
-      str(tex_opts.baselinestretch) + "}\n",
-      "\\usepackage[font=small]{caption}\n", "\\usepackage{subcaption}\n",
+      "\\def\\pdfximage{\\immediate\\mypdfximage}\n",
+      "\n",
+      "\\documentclass[a4paper,fontsize=7pt]{scrartcl}\n",
+      "\n",
+      "\\usepackage[english]{babel}\n",
+      "\\usepackage{xurl}\n",
+      "\\usepackage{lmodern}\n",
+      "\\usepackage[none]{hyphenat}\n",
+      "\\usepackage{graphicx}\n",
+      "\\renewcommand{\\baselinestretch}{" + str(tex_opts.baselinestretch) +
+      "}\n",
+      "\\usepackage[font=small]{caption}\n",
+      "\\usepackage{subcaption}\n",
       "\\usepackage[top=0.6in,bottom=0.6in,left=" + str(tex_opts.side_margin) +
       "in,right=" + str(tex_opts.side_margin) + "in]{geometry}\n",
       "\\usepackage[figurename=Fig.]{caption}\n",
       "\\usepackage[T1]{fontenc} % allows for the correct printing of _\n",
-      "\\usepackage[section]{placeins}\n", "\n", "\\title{" + title + "}\n",
-      "\\subtitle{model hash: " + sha + "}\n", "\\author{" + authors + "}\n",
+      "\\usepackage[section]{placeins}\n",
+      "\n",
+      "\\title{" + title + "}\n",
+      #"\\subtitle{model hash: " + sha + "}\n",
+      "\\author{" + authors + "}\n",
       "\\date{\\vspace{-5ex}}\n",
       "%\\pdfsuppresswarningpagegroup=1 % works only with newer pdflatex versions\n",
-      "\n", "\\pdfminorversion=7\n", "\\begin{document}\n", "\\maketitle\n"
+      "\n",
+      "\\pdfminorversion=7\n",
+      "\\begin{document}\n",
+      "\\maketitle\n"
       "Each figure shows a species with its name in the kinetic model,\n",
       "its International Chemical Identifier (InChI),\n",
       "and its simplified molecular-input line-entry system (SMILES) formula.\n"
@@ -2181,18 +2193,21 @@ if __name__ == "__main__":
       '--fatal_error_only',
       help=
       'only species currently used in the (sub)model(s) are considered in the checks',
-      action='store_true')
+      action='store_false')
   parser.add_argument('-n',
                       '--name',
                       help='name (title) of species dictionary',
-                      default="C3Mech species dictionary")
+                      default="C3MechV4.0 species dictionary")
   parser.add_argument(
       '-a',
       '--authors',
       help='list of authors',
       default=
-      "Yuki Murakami, Luna Pratali Maffei, Raymond Langer, Sanket Girhe,\\\\\nScott W. Wagnon, Goutham Kukkadapu, Matteo Pelucchi, Kuiwen Zhang,\\\\\nMandhapati Raju, Tanusree Chatterjee, William J. Pitz, Tiziano Faravelli,\\\\\nHeinz Pitsch, Peter Kelly Senecal, Henry J. Curran"
-  )
+      ("Luna Pratali Maffei, Raymond Langer, Yuki Murakami, Scott W. Wagnon," +
+       "\\\\\nPengzhi Wang, Jiaxin Liu, Mohsin Raza, Yuxiang Zhu, Sanket Girhe,"
+       +
+       "\\\\\nChristian Schwenzer, Joachim Beeckmann, Stephen J. Klippenstein, Tiziano Faravelli,"
+       + "\\\\\nHeinz Pitsch, Peter Kelly Senecal, Henry J. Curran"))
   parser.add_argument('-g',
                       '--git',
                       help='directory that contains the git repository',
