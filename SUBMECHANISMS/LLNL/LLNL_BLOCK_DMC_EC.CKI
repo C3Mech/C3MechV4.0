@@ -1,0 +1,198 @@
+!++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+!\KINETICS_MODULE: DMC, EC
+!++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+!DIMETHYL CARBONATE, COC(VO)CO______________________________________________________________________!
+
+!FH_UNIMOLECULAR____________________________________________________________________________________
+
+COC(VO)OC=CH3OCH3+CO2                                  1.23E+34   -5.640   82740 !WAGNON1@LLNL.GOV! SUN 164 (2016) 224
+PLOG /  4.00E-02  8.00E+54  -12.130   89326 / 
+PLOG /  1.00E-01  4.90E+51  -11.130   88119 / 
+PLOG /  5.00E-01  6.03E+45   -9.320   85755 / 
+PLOG /  1.00E+00  1.49E+43   -8.530   84667 / 
+PLOG /  1.00E+01  6.51E+39   -7.400   84604 / 
+PLOG /  1.00E+02  1.23E+34   -5.640   82740 / 
+PLOG /  1.00E+03  8.70E+26   -3.510   79326 / 
+COC(VO)OC=COC(VO)OJ+CH3                                3.51E+52  -10.080  108107 !WAGNON1@LLNL.GOV! SUN 164 (2016) 224
+PLOG /  4.00E-02  2.86E+75  -17.580  112569 / 
+PLOG /  1.00E-01  7.95E+72  -16.710  112126 / 
+PLOG /  5.00E-01  1.13E+67  -14.820  110484 / 
+PLOG /  1.00E+00  1.29E+64  -13.890  109488 / 
+PLOG /  1.00E+01  9.42E+59  -12.430  110018 / 
+PLOG /  1.00E+02  3.51E+52  -10.080  108107 / 
+PLOG /  1.00E+03  8.70E+26   -3.510   79326 / !WAGNON1@LLNL.GOV! WARNING, THIS ENTRY IS THE SAME AS COC(VO)OC=CH3OCH3+CO2
+COC(VO)OC=CH3OCHO+CH2O                                 2.87E+47   -9.790  110604 !WAGNON1@LLNL.GOV! SUN 164 (2016) 224
+PLOG /  4.00E-02  5.25E+70  -17.560  113831 / 
+PLOG /  1.00E-01  2.08E+68  -16.720  113583 / 
+PLOG /  5.00E-01  3.12E+62  -14.800  112168 / 
+PLOG /  1.00E+00  2.82E+59  -13.830  111215 / 
+PLOG /  1.00E+01  2.60E+55  -12.340  112280 / 
+PLOG /  1.00E+02  2.87E+47   -9.790  110604 / 
+PLOG /  1.00E+03  1.29E+36   -6.370  105853 / 
+!COC*OOCH IS A SINK IN SUN 164 (2016) 224!COC(VO)OC=COC*OOCH+H2                                  1.43E+52  -10.900  117840 !WAGNON1@LLNL.GOV! SUN 164 (2016) 224
+!COC*OOCH IS A SINK IN SUN 164 (2016) 224!PLOG /  4.00E-02  1.80E+73  -18.280  118267 / 
+!COC*OOCH IS A SINK IN SUN 164 (2016) 224!PLOG /  1.00E-01  4.20E+71  -17.620  118560 / 
+!COC*OOCH IS A SINK IN SUN 164 (2016) 224!PLOG /  5.00E-01  5.79E+66  -15.930  117952 / 
+!COC*OOCH IS A SINK IN SUN 164 (2016) 224!PLOG /  1.00E+00  8.87E+63  -15.000  117260 / 
+!COC*OOCH IS A SINK IN SUN 164 (2016) 224!PLOG /  1.00E+01  1.61E+60  -13.530  118984 / 
+!COC*OOCH IS A SINK IN SUN 164 (2016) 224!PLOG /  1.00E+02  1.43E+52  -10.900  117840 / 
+!COC*OOCH IS A SINK IN SUN 164 (2016) 224!PLOG /  1.00E+03  7.95E+39   -7.160  113095 / 
+COC(VO)OC=COC(VO)OCJ+H                                 1.73E+57  -12.140  122881 !WAGNON1@LLNL.GOV! SUN 164 (2016) 224
+PLOG /  4.00E-02  4.46E+75  -18.850  121549 / 
+PLOG /  1.00E-01  6.15E+74  -18.400  122252 / 
+PLOG /  5.00E-01  1.15E+71  -17.000  122328 / 
+PLOG /  1.00E+00  4.18E+68  -16.170  121887 / 
+PLOG /  1.00E+01  1.47E+65  -14.760  123860 / 
+PLOG /  1.00E+02  1.73E+57  -12.140  122881 / 
+PLOG /  1.00E+03  9.01E+44   -8.400  118180 / 
+COC(VO)OC=CH3OCO+CH3O                                  4.44E+61  -12.850  123935 !WAGNON1@LLNL.GOV! SUN 164 (2016) 224
+PLOG /  4.00E-02  3.63E+79  -19.340  123140 / 
+PLOG /  1.00E-01  8.61E+78  -18.970  123884 / 
+PLOG /  5.00E-01  3.83E+75  -17.690  124058 / 
+PLOG /  1.00E+00  1.99E+73  -16.910  123660 / 
+PLOG /  1.00E+01  4.15E+69  -15.450  125251 / 
+PLOG /  1.00E+02  4.44E+61  -12.850  123935 / 
+PLOG /  1.00E+03  6.85E+49   -9.260  119185 / 
+
+
+
+!FH_ABSTRACTION_____________________________________________________________________________________
+
+COC(VO)OC+H=COC(VO)OCJ+H2                              8.73E+04    2.827    6752 !WAGNON1@LLNL.GOV! PEUKERT ET AL. JPC A 117 3718-3728 (2013)
+COC(VO)OC+O=COC(VO)OCJ+OH                              1.13E+04    2.924    4646 !WAGNON1@LLNL.GOV! PEUKERT ET AL. JPC A 117 3729-3738 (2013)
+COC(VO)OC+O2=COC(VO)OCJ+HO2                            3.07E+13    0.080   51750 !SUN 164 (2016) 224! ANALOGY TO THAT OF MF, A FACTOR*2 DOOLEY INT JCK 527-549 (2010)
+COC(VO)OC+OH=COC(VO)OCJ+H2O                            1.77E+13    0.054    3340 !SUN 164 (2016) 224! ANALOGY TO THAT OF MF, A FACTOR*2 DOOLEY INT JCK 527-549 (2010)
+COC(VO)OC+CH3=COC(VO)OCJ+CH4                           5.82E-01    3.700    6824 !SUN 164 (2016) 224! ANALOGY TO THAT OF MF, A FACTOR*2 DOOLEY INT JCK 527-549 (2010)
+COC(VO)OC+HO2=COC(VO)OCJ+H2O2                          1.13E+05    2.440   16594 !SUN 164 (2016) 224! ANALOGY TO THAT OF MF, A FACTOR*2  DOOLEY INT JCK 527-549 (2010)
+COC(VO)OC+CH3O2=COC(VO)OCJ+CH3O2H                      1.13E+05    2.440   16594 !SUN 164 (2016) 224! ANALOGY TO THAT OF MF, A FACTOR*2 DOOLEY INT JCK 527-549 (2010)
+COC(VO)OC+CH3O=COC(VO)OCJ+CH3OH                        9.18E+09    0.450    4824 !SUN 164 (2016) 224! ANALOGY TO THAT OF MF, A FACTOR*2 DOOLEY INT JCK 527-549 (2010)
+COC(VO)OC+C2H3=COC(VO)OCJ+C2H4                         2.00E+11    0.000   10400 !SUN 164 (2016) 224! ANALOGY TO THAT OF MF, A FACTOR*2 DOOLEY INT JCK 527-549 (2010)
+COC(VO)OC+C2H5=COC(VO)OCJ+C2H6                         2.00E+11    0.000   10400 !SUN 164 (2016) 224! ANALOGY TO THAT OF MF, A FACTOR*2 DOOLEY INT JCK 527-549 (2010)
+COC(VO)OC+HCO=COC(VO)OCJ+CH2O                          2.05E+05    2.500   16630 !SUN 164 (2016) 224! ANALOGY TO THAT OF MF, A FACTOR*2 DOOLEY INT JCK 527-549 (2010)
+COC(VO)OC+CH3OCO=COC(VO)OCJ+CH3OCHO                    2.00E+11    0.000   10400 !SUN 164 (2016) 224! ANALOGY TO THAT OF MF, A FACTOR*2 DOOLEY INT JCK 527-549 (2010)
+
+
+
+!F_UNIMOLECULAR_____________________________________________________________________________________
+
+COC(VO)OCJ=CH3OCO+CH2O                                 5.60E+12    0.625   15140 !WAGNON1@LLNL.GOV! SUN 164 (2016) 224
+COC(VO)OJ=CH3O+CO2                                     1.61E+14    0.087   16350 !WAGNON1@LLNL.GOV! SUN 164 (2016) 224
+
+
+
+!--------------------------------------------------------
+! Sub-mechanism of ethylene carbonate (EC) pyrolysis
+!--------------------------------------------------------
+!
+!--------------------------------------------------------
+! Unimolecular decompostion reactions of EC
+!--------------------------------------------------------
+!ref: K. Kanayama et al., CNF (2022) 112359.
+CY(COCVOOC)=CH3CHO+CO2                    4.69E+11 0.8629188 65418.7028 ! k calculated using gpop (300-3000K, HPL)
+CY(COCVOOC)=C2H4O1-2+CO2                  4.10E+12 0.6432459 74298.4211 ! k calculated using gpop (300-3000K, HPL)
+CY(COCVOOC)=C2H3OH+CO2                    4.21E+11 0.7585555 94650.2506 ! k calculated using gpop (300-3000K, HPL)
+
+!ver3.0.0: Add #2; Analogy to 1,3-dioxolane, ref: A. Wildenburg et al., PCI (2021) 543-53.
+CY(CJOCVOOC)+H=CY(COCVOOC)               1.00E+14   0.00       0.0 ! [DEB2017]
+
+!Bimolecular initiation
+!ver3.1.1: Analogy to 1,3-dioxolane, ref: A. Wildenburg et al., PCI (2022) in press.
+CY(COCVOOC)+O2=CY(CJOCVOOC)+HO2           2.509E-6 5.486 4.38911E4 ! [CAL2022] Malte A*1
+
+!ver3.0.0: Not add #3; Analogy to 1,3-dioxolane, ref: A. Wildenburg et al., PCI (2021) 543-53.
+!Direct oxidation (R+O2=Olefin+HO2)
+!CY(CJOCVOOC)+O2=CY(OC*OOC*C)+HO2           1.07E+00    3.71  7322.0 ! [BUG2015] -2kcal for BDE variation
+
+!--------------------------------------------------------
+! H-atom abstraction reactions of EC
+!--------------------------------------------------------
+!ver2.2.0a: Analogy to 1,3-dioxolane, ref: A. Wildenburg et al., PCI (2021) 543?E53.
+!CY(COCVOOC)+OH=CY(CJOCVOOC)+H2O    2.5E12 0.0 1.59E2    ! [DAG1990]
+!ver3.1.1: Analogy to 1,3-dioxolane, ref: A. Wildenburg et al., PCI (2022) in press.
+CY(COCVOOC)+OH=CY(CJOCVOOC)+H2O    1.3E12 0.22 1.7207E3   ! [CAL2022] hot reaction
+    PLOG/1.0E-2 2.206E11 2.71E-1 4.71E2/      ! 500.0-2200.0K; unacc.rate 5.26e+10; fit.err 3.38e-02
+    PLOG/1.0E-1 1.613E13 -1.86E-1 1.6986E3/   ! 500.0-2200.0K; unacc.rate 5.64e+10; fit.err 1.92e-02
+    PLOG/1.0E0 1.3E12 2.2E-1 1.7207E3/        ! 500.0-2200.0K; unacc.rate 8.53e+10; fit.err 1.46e-02
+    PLOG/1.0E1 4.062E10 7.08E-1 1.2772E3/     ! 500.0-2200.0K; unacc.rate 2.08e+11; fit.err 5.95e-03
+    PLOG/1.0E2 1.969E9 1.122E0 8.228E2/       ! 500.0-2200.0K; unacc.rate 2.77e+11; fit.err 5.06e-03
+
+!CY(COCVOOC)+H=CY(CJOCVOOC)+H2    6.86E5 2.32 3.8108E3   ! [KRO2019]
+CY(COCVOOC)+H=CY(CJOCVOOC)+H2    5.462E11 0.699 5.8298E3   ! [CAL2022] hot reaction
+    PLOG/1.0E-2 2.092E11 6.04E-1 4.476E3/     ! 500.0-2200.0K; unacc.rate 5.29e+11; fit.err 1.28e-02
+    PLOG/1.0E-1 9.494E12 2.09E-1 5.6334E3/    ! 500.0-2200.0K; unacc.rate 4.58e+11; fit.err 1.17e-02
+    PLOG/1.0E0 5.462E11 6.99E-1 5.8298E3/     ! 500.0-2200.0K; unacc.rate 3.84e+10; fit.err 3.96e-03
+    PLOG/1.0E1 2.138E9 1.476E0 5.1124E3/      ! 500.0-2200.0K; unacc.rate 2.23e+11; fit.err 6.54e-03
+    PLOG/1.0E2 2.428E7 2.096E0 4.4932E3/      ! 500.0-2200.0K; unacc.rate 1.31e+12; fit.err 9.12e-03
+
+CY(COCVOOC)+O=CY(CJOCVOOC)+OH    2.01E1 3.68 -1.65E3   ! [EST2019]
+
+!CY(COCVOOC)+CH3=CY(CJOCVOOC)+CH4    1.9E2 2.77 7.1756E3   ! [KRO2019]
+CY(COCVOOC)+CH3=CY(CJOCVOOC)+CH4    2.083E7 1.477 9.2461E3   ! [CAL2022] hot reaction
+    PLOG/1.0E-2 4.718E6 1.304E0 7.3301E3/     ! 500.0-2200.0K; unacc.rate 1.80e+10; fit.err 1.99e-02
+    PLOG/1.0E-1 5.309E6 1.439E0 7.7106E3/     ! 500.0-2200.0K; unacc.rate 1.44e+10; fit.err 1.37e-02
+    PLOG/1.0E0 2.083E7 1.477E0 9.2461E3/      ! 500.0-2200.0K; unacc.rate 6.00e+08; fit.err 6.44e-03
+    PLOG/1.0E1 3.043E4 2.422E0 8.5594E3/      ! 500.0-2200.0K; unacc.rate 4.22e+09; fit.err 8.07e-03
+    PLOG/1.0E2 3.356E2 3.074E0 8.1165E3/      ! 500.0-2200.0K; unacc.rate 3.84e+10; fit.err 1.15e-02
+
+!CY(COCVOOC)+HO2=CY(CJOCVOOC)+H2O2    3.82E-2 4.23 9.023E3   ! [MEN2014]
+CY(COCVOOC)+HO2=CY(CJOCVOOC)+H2O2    1.8705E8 1.327 1.58147E4   ! [CAL2022] a*1.5 hot reaction
+    PLOG/1.0E-2 3.9435E8 9.94E-1 1.46722E4/   ! 500.0-2200.0K; unacc.rate 3.18e+09; fit.err 1.17e-02
+    PLOG/1.0E-1 7.098E9 7.25E-1 1.56903E4/    ! 500.0-2200.0K; unacc.rate 2.67e+09; fit.err 1.13e-02
+    PLOG/1.0E0 1.8705E8 1.327E0 1.58147E4/    ! 500.0-2200.0K; unacc.rate 1.31e+08; fit.err 8.78e-04
+    PLOG/1.0E1 2.547E5 2.246E0 1.49231E4/     ! 500.0-2200.0K; unacc.rate 8.26e+08; fit.err 7.83e-03
+    PLOG/1.0E2 1.4603E3 2.957E0 1.41909E4/    ! 500.0-2200.0K; unacc.rate 7.26e+09; fit.err 1.04e-02
+
+CY(COCVOOC)+CH3O2=CY(CJOCVOOC)+CH3O2H    2.55E-2 4.23 9.023E3   ! [MEN2014] A/1.5
+CY(COCVOOC)+CH3O=CY(CJOCVOOC)+CH3OH      3.33E0  3.71 4.23E2    ! [EST2019]
+CY(COCVOOC)+O2CHO=CY(CJOCVOOC)+HO2CHO    7.24E-1 3.98 9.058E3   ! [EST2019]
+CY(COCVOOC)+OCHO=CY(CJOCVOOC)+HOCHO      1.0E13  0.0  1.769E4   ! [EST2019]
+CY(COCVOOC)+C2H5=CY(CJOCVOOC)+C2H6       2.33E5  1.84 9.4511E3  ! [KRO2019]
+
+!ver2.2.0b: Analogy to tetrahydrofuran, ref: Y. Fenard et al., CNF (2018) 252?E69.
+!CY(COCVOOC)+OH(=)CY(CJOCVOOC)+H2O          6.93E+11  0.41    213.6 !GIR2016
+!CY(COCVOOC)+H(=)CY(CJOCVOOC)+H2            1.16E+07  2.0154 3203.8013 ! MARCO abinitio T
+!CY(COCVOOC)+O(=)CY(CJOCVOOC)+OH            6.80E+08  1.5     385.0 !VER2015
+!CY(COCVOOC)+CH3(=)CY(CJOCVOOC)+CH4         8.37E-04  4.60  4113.80 ! MARCO abinitio TS_
+!CY(COCVOOC)+HO2(=)CY(CJOCVOOC)+H2O2        7.79E+00  3.53  7890.0  ! CHA 2MTHF TST with Exact Solution for !Torsional Motions
+!CY(COCVOOC)+CH3O2(=)CY(CJOCVOOC)+CH3O2H    6.00E+12  0.00  17500.0 ! ME 58 CN
+!CY(COCVOOC)+CH3O(=)CY(CJOCVOOC)+CH3OH      2.90E+11  0.00  4500.0  ! ME 56 CN
+!CY(COCVOOC)+HCO=CY(CJOCVOOC)+CH2O          2.20E+07  1.90  17000.0 ! ME 52 CN
+!CY(COCVOOC)+CH2OH=)CY(CJOCVOOC)+CH3OH      1.20E+02  2.95  12000.0 ! ME 54 CN
+!CY(COCVOOC)+C2H5(=)CY(CJOCVOOC)+C2H6       4.00E+11  0.00  11000.0 ! ME 60 CN
+
+!--------------------------------------------------------
+!Ring-opening reactions (beta-scission) of ec-radical
+!--------------------------------------------------------
+!upper pathways
+!1-5 breaking beta-scission (radical site : 4) -) dissociation channel
+!ver2.2.3: k calculated using gpop-tool (G4) for 300-3000K (HPL)
+CY(CJOCVOOC)=CH2CHO+CO2    4.914E12 0.335 2.0903E4    ! k calculated using gpop (300-3000K, HPL)
+
+!lower pathways
+!2-3 breaking beta-scission (radical site : 4)
+!ver2.2.3: k calculated using gpop-tool (G4) for 300-3000K (HPL)
+CY(CJOCVOOC)=OVCCOCJVO     1.06E13 0.279 3.37312E4    ! k calculated using gpop (300-3000K, HPL)
+
+!post-ring open reactions
+!ver2.2.5: Taken from A. Wildenburg et al., PCI (2021) 543?E53. (= O*CCO(C)*O)
+!OVCCOCJVO=CO2+CH2CHO    8.69E17 -1.81 1.36567E4   ! [AM 3.0] as CH3OCO=CH3+CO2 (HPL)
+!OVCCOCJVO=CO+OCH2CHO    1.56E19 -1.86 1.53391E4   ! [SAK2017]
+!ver3.1.1: Analogy to 1,3-dioxolane (O*CJOCC), ref: A. Wildenburg et al., PCI (2022) in press.
+OVCCOCJVO=CH2CHO+CO2    6.633E28 -5.616E0 1.82157E4   ! [CAL2022] 500.0-2200.0K; fit err.: 2.62e-03
+    PLOG/1.0E-2 1.762E21 -3.971E0 1.33446E4/   ! 500.0-800.0K; fit err.: 4.26e-03
+    PLOG/1.0E-1 4.041E26 -5.285E0 1.61195E4/   ! 500.0-800.0K; fit err.: 4.09e-03
+    PLOG/1.0E0 6.633E28 -5.616E0 1.82157E4/    ! 500.0-900.0K; fit err.: 6.55e-03
+    PLOG/1.0E1 6.247E28 -5.295E0 1.97153E4/    ! 500.0-1000.0K; fit err.: 4.21e-03
+    PLOG/1.0E2 1.351E24 -3.654E0 1.90778E4/    ! 500.0-1400.0K; fit err.: 3.37e-03
+OVCCOCJVO=OCH2CHO+CO    1.096E27 -5.216E0 2.34771E4   ! [CAL2022] 500.0-2200.0K; fit err.: 5.81e-03
+    PLOG/1.0E-2 4.052E4 7.55E-1 1.812E4/       ! 500.0-800.0K; fit err.: 2.64e-03
+    PLOG/1.0E-1 4.583E16 -2.58E0 1.98784E4/    ! 500.0-800.0K; fit err.: 3.35e-03
+    PLOG/1.0E0 1.096E27 -5.216E0 2.34771E4/    ! 500.0-900.0K; fit err.: 7.40e-03
+    PLOG/1.0E1 4.594E33 -6.689E0 2.76014E4/    ! 500.0-1000.0K; fit err.: 7.46e-03
+    PLOG/1.0E2 9.528E30 -5.442E0 2.85584E4/    ! 500.0-1400.0K; fit err.: 9.03e-03
+!WAGNON1@LLNL.GOV, DUP!OCH2CHO=CH2O+HCO        1.0E11   0.0   1.19E4     ! [SAK2017]
+
+!++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+!\END_KINETICS_MODULE: DMC, EC
+!++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++

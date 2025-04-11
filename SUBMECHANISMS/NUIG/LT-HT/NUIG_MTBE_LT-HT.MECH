@@ -1,0 +1,299 @@
+!++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+!\KINETICS_MODULE: MTBE
+!++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+!_________________________________________________________________________________________________________
+!1.Unimolecular decomposition:
+!_________________________________________________________________________________________________________
+
+MTBE<=>CH3+TC4H9O      3.75E+29  -3.93    84777      ! CH3+TC4H9O(+M)<=>MTBE(+M) 2.1E13 0.00  0.00 Chemrev+Chemdis 
+PLOG / 1.00E-02 3.00E+75 -17.97   103177 /
+PLOG / 1.00E-01 1.72E+63 -14.17    98620 /
+PLOG / 1.00E+00 3.18E+50 -10.27    93562 /
+PLOG / 1.00E+01 6.30E+38  -6.72    88715 /
+PLOG / 1.00E+02 3.75E+29  -3.93    84777 /
+MTBE<=>CH3O+TC4H9    5.91E+35   -5.59    89752       ! CH3O+TC4H9(+M)<=>MTBE(+M) 2.1E13 0.00  0.00 Chemrev+Chemdis 
+PLOG / 1.00E-02 1.55E+83 -20.15   108339 /
+PLOG / 1.00E-01 3.03E+71 -16.48   104229 /
+PLOG / 1.00E+00 2.62E+58 -12.47    99164 /
+PLOG / 1.00E+01 8.49E+45  -8.66    94058 /
+PLOG / 1.00E+02 5.91E+35  -5.59    89752 /
+MTBE<=>CH3+CH3OC3H6T   2.69E+36   -5.91    90391     ! CH3+CH3OC3H6T(+M)<=>MTBE(+M) 7.0E12 0.00  0.00 Chemrev+Chemdis 
+PLOG / 1.00E-02 9.18E+83  -20.52   108960 /
+PLOG / 1.00E-01 2.34E+72  -16.88   104930 /
+PLOG / 1.00E+00 1.94E+59  -12.85    99877 /
+PLOG / 1.00E+01 5.09E+46   -9.02    94742 /
+PLOG / 1.00E+02 2.69E+36   -5.91    90391 /
+MTBE<=>IC4H8+CH3OH   1.35E+06	2.30613	57668.14044    ! MESS Calculation This work
+PLOG / 1.00E-02 1.72E+40	-8.04121	72141.49197 /
+PLOG / 1.00E-01 1.38E+32	-5.52567	69172.58571 /
+PLOG / 1.00E+00 3.64E+21	-2.32708	64610.93068 /
+PLOG / 1.00E+01 1.76E+13	0.15478		60762.25557 /
+PLOG / 1.00E+02 2.06E+11	0.72982		59853.84708 /
+H+TC4H9OCH2<=>MTBE 1.000E+14    0.000    0.0000E+00 
+H+TC4H8OCH3<=>MTBE 1.000E+14    0.000    0.0000E+00 
+
+!_________________________________________________________________________________________________________
+!   2.H-atom abstraction:
+!_________________________________________________________________________________________________________
+
+MTBE+H<=>TC4H9OCH2+H2					1.935E+06	2.090	3.38E+03		! Analogy NUIG1.3 CH3OCH3+H=CH3OCH2+H2 (A*0.5 considering H number) 
+MTBE+H<=>TC4H8OCH3+H2					1.425E+08	1.98	9.20E+03		! Analogy DEE Tran et al. 2017 Calculation (A*1.5 considering H number) 
+MTBE+OH<=>TC4H9OCH2+H2O					6.825E+06	1.89	-366			! Analogy DME Carr et al.  J. Phys. Chem. A 117 (2013) 11142-11154.   (A/2 considering H number)   a*0.7
+MTBE+OH<=>TC4H8OCH3+H2O					1.7082E+00	4.04	-1.37E+03		! Analogy EME Zhou et al.  PCCP 209 (2010) 7221-7233. TS2C-1*2+TS2C-2=total   (A*3 considering H number)  a*1.3
+MTBE+HO2<=>TC4H9OCH2+H2O2				2.378E-03	4.640	1.0556E+04		! Analogy DME J. MENDES, C.-W. ZHOU, H.J. CURRAN, THE JOURNAL OF PHYSICAL CHEMISTRY A, 118(2014) 1300-1308. (A/2 considering H number)(A*1.5)
+MTBE+HO2<=>TC4H8OCH3+H2O2				1.557e-04	4.950	1.53e+04		! Analogy DME J. MENDES, C.-W. ZHOU, H.J. CURRAN, THE JOURNAL OF PHYSICAL CHEMISTRY A, 118(2014) 1300-1308. primary beta-rate rule(A*9 considering H number)
+MTBE+CH3O2<=>TC4H9OCH2+CH3O2H			7.79E-06	5.470	1.30E+04		! Analogy GuO et al., JPCA 2023 Mar 2;127(8):1960-1974. DME+CH3O2<=>CH3O2H+CH3OCH2(A/2 considering H number)
+MTBE+CH3O2<=>TC4H8OCH3+CH3O2H			2.23E-03	5.020	2.00E+04		! Analogy GuO et al., JPCA 2023 Mar 2;127(8):1960-1974. EME+CH3O2<=>CH3O2H+CH3OCH2CH2 (A*3 considering H number)
+MTBE+CH3<=>TC4H9OCH2+CH4				3.45E+00	3.780	9.69E+03		! NUIG1.3 DME+CH3 (A*0.5 considering H number) !\Ref: R.S. TRANTER, P.T. LYNCH, C.J. ANNESLEY, THE JOURNAL OF PHYSICAL CHEMISTRY A, 116(2012) 7287-7292. !\Comment: (A-FACTOR - 3.0)
+MTBE+CH3<=>TC4H8OCH3+CH4				9.90E+02	3.30	1.23E+04		! Analogy DEE Tran DEE+CH3<=>CH4+C2H5OC2H4-B	  6.60E+02    3.30    12291.0  !Analogy to C2H5OHx2!CBS-QB3! (1.5A considering H number)
+MTBE+O<=>TC4H9OCH2+OH					3.88E+08	1.360	2.25E+03		! NUIG1.3 DME+O (A*0.5 considering H number) !CURRAN 08 NIST FIT !
+MTBE+O<=>TC4H8OCH3+OH					3.141E+06	2.420	4.77E+03		! H-atom abstraction by O(per H) Pengzhi P  (A*9 considering H number)
+MTBE+CH3O<=>TC4H9OCH2+CH3OH				1.50E+11	0.000	5.50E+03		! H-atom abstraction by CH3O(per H) Pengzhi P E-1.5kcal (A*3 considering H number)
+MTBE+CH3O<=>TC4H8OCH3+CH3OH				4.59E-11	6.870	2.46E+03		! Analogy Yalamanchi et al., CNF 2023 Mar 252:112742. CH3O+C8H18=C8H18-4+CH3O 
+MTBE+O2<=>TC4H9OCH2+HO2					2.05E+13	0.000	4.49E+04		! NUIG1.3 DME+O2 (A*0.5 considering H number) !H.J. Curran, W.J. Pitz, C.K. Westbook, et al.  IJCK-1997 DME+O2  
+MTBE+O2<=>TC4H8OCH3+HO2					6.30E+13	0.000	5.28E+04		! H-atom abstraction by O2(per H) Pengzhi P  (rate rule A*9 considering H number)
+!_________________________________________________________________________________________________________  
+!   3.Radical isomerization:
+!_________________________________________________________________________________________________________  
+TC4H8OCH3<=>TC4H9OCH2		4.37E-02	3.54	1.32E+04		!Analogy Power et al. JPCA 124,10649-10666 2020 a-C5H11=d-C5H11 !wB97XD/aug-cc-pVTZ//CCSD(T)/CBS-QB3! E -1.5kcal 
+!_________________________________________________________________________________________________________  
+!  4. Beta-scissions :
+!_________________________________________________________________________________________________________  
+
+TC4H9OCH2<=>CH2O+TC4H9		5.33E+30   -5.25    28453    ! Chemdis !Analogy EME  Fan et al., PCI 2022 CH2OC2H5<=>CH2O+C2H5   !As DEE Tran et al. 2019 C2H5OC2H4-A<=>C2H5+CH3CHO could down
+PLOG / 1.00E-02 1.06E+18   -3.09    13909. /
+PLOG / 1.00E-01 3.68E+24   -4.61    18710. /
+PLOG / 1.00E+00 6.10E+30   -6.02    23882. /
+PLOG / 1.00E+01 7.02E+33   -6.51    27760. /
+PLOG / 1.00E+02 5.33E+30   -5.25    28453. /
+TC4H8OCH3<=>CH3O+IC4H8				6.23E+28	-4.71	37364.   ! Chemdis A/3 Analogy NEO=IC4H8+CH3 PZ REV 
+PLOG / 1.00E-02 1.41E+42   -9.96    35687. /
+PLOG / 1.00E-01 1.06E+45  -10.40    39317. /
+PLOG / 1.00E+00 1.64E+44   -9.79    41225. /
+PLOG / 1.00E+01 1.99E+38   -7.73    40419. /
+PLOG / 1.00E+02 6.23E+28   -4.71    37364. /
+TC4H8OCH3<=>CH3OC(CH3)CH2+CH3		1.32E+10     0.75    32212.  ! Chemdis A/2 !Analogy DIPE Fan et al., PCI DIPE=CH3+ 
+PLOG / 1.00E-02 1.14E+49  -11.62    44827. /
+PLOG / 1.00E-01 0.89E+44   -9.76    44634. /
+PLOG / 1.00E+00 0.78E+33   -6.23    41204. /
+PLOG / 1.00E+01 3.96E+19   -2.13    36129. /
+PLOG / 1.00E+02 1.32E+10    0.75    32212. /
+CH3OC3H6T<=>CH3+CH3COCH3			7.40E+13	0.10	2.28E+04				!Analogy DIPE Fan et al., PCI 38(2021)321-328    !IC3H7OC(CH3)2<=>IC3H7+CH3COCH3   !Analogy DEE Tran et al. 2019 C2H5OC2H4-A<=>C2H5+CH3CHO chould down
+CH3OC3H6T<=>H+CH3OC(CH3)CH2			2.20E+13	0.13	3.74E+04				!Analogy Power et al. JPCA 124,10649-10666 2020 H+aC5H10=bC5H11 !wB97XD/aug-cc-pVTZ//CCSD(T)/CBS-QB3! Chemrev
+!_________________________________________________________________________________________________________  
+! LOw-T
+! 5. R+O2<=>ROO :
+!_________________________________________________________________________________________________________  
+TC4H9OCH2+O2<=> TC4OCO2-1		1.87E+12	5.00E-09	-648		! Analogy DME+O2 HPL Rosado-Reyes et al., J. Phys. Chem. A 109 (2005) 10940-10953. 
+TC4H8OCH3+O2<=> COTC4O2-2		6.86E+16	-1.627		199			! R+O2<=>ROO  Pengzhi P
+!_________________________________________________________________________________________________________  
+! 6. R+ROO<=>RO+RO :
+!_________________________________________________________________________________________________________  
+TC4H9OCH2+TC4OCO2-1<=>TC4OCO-1+TC4OCO-1    4.500e+12   0.000 -500 !As DEE Tran et al. 2019 C2H5OC2H4-A+C2OC2H4OO-A<=>C2H5OC2H4O-A+C2H5OC2H4O-A !as DBE THiOn et al.CnF2017
+TC4H9OCH2+COTC4O2-2<=>TC4OCO-1+COTC4O-2    4.500e+12   0.000    0 !As DEE Tran et al. 2019 C2H5OC2H4-A+C2OC2H4OO-B<=>C2H5OC2H4O-B+C2H5OC2H4O-A !as DBE THiOn et al.CnF2017
+TC4H8OCH3+TC4OCO2-1<=>COTC4O-2+TC4OCO-1    4.500e+12   0.000 -500 !As DEE Tran et al. 2019 C2H5OC2H4-B+C2OC2H4OO-A<=>C2H5OC2H4O-B+C2H5OC2H4O-A !as DBE THiOn et al.CnF2017
+TC4H8OCH3+COTC4O2-2<=>COTC4O-2+COTC4O-2    4.500e+12   0.000    0 !As DEE Tran et al. 2019 C2H5OC2H4-B+C2OC2H4OO-B<=>C2H5OC2H4O-B+C2H5OC2H4O-B !as DBE THiOn et al.CnF2017
+!_________________________________________________________________________________________________________  
+! 7.R+HO2<=>RO+OH :
+!_________________________________________________________________________________________________________  
+TC4H9OCH2+HO2<=>TC4OCO-1+OH   9.000E+12  0.00      0.00  !As DME Wang et al. CH3OCH2+HO2 = CH3OCH2O+OH
+TC4H8OCH3+HO2<=>COTC4O-2+OH   7.000e+12  0.00  -1000.00  !As DEE Tran et al. 2019 C2H5OC2H4-B+HO2<=>C2H5OC2H4O-B+OH
+!_________________________________________________________________________________________________________  
+! 8.R+CH3O2<=>RO+CH3O :
+!_________________________________________________________________________________________________________  
+TC4H9OCH2+CH3O2<=>TC4OCO-1+CH3O     4.500e+12  0.000     0    !As DBE THiOn et al., COmbust. Flame, 185 (2017) 4-15. C4H9OC4H8-a+CH3O2<=>C4H9OC4H8O-a+CH3O
+TC4H8OCH3+CH3O2<=>COTC4O-2+CH3O     4.500e+12  0.000     0    !As DBE THiOn et al., COmbust. Flame, 185 (2017) 4-15. C4H9OC4H8-b+CH3O2<=>C4H9OC4H8O-b+CH3O
+!_________________________________________________________________________________________________________  *
+! 9.ROO<=>QOOH :
+!_________________________________________________________________________________________________________  
+TC4OCO2-1<=>TC4OCO2H-2		3.72E-02	3.38	1.21E+04	! NIST reffit 
+COTC4O2-2<=>COTC4O2H-2		9.72E+07	1.23	2.15E+04	! 1,5p 6 member rate rule , J. PHys. CHem. A, 115 (2011) 13425-13442. 
+COTC4O2-2<=>COTC4O2H-1		1.03E+06	1.48	1.87E+04	! 1,6 P rate rule E -1.5kcal Villano et al., J. PHys. CHem. A, 115 (2011) 13425-13442.
+!_________________________________________________________________________________________________________  
+! 10.ROO<=>acid/aldehyde+ OH:
+!_________________________________________________________________________________________________________  
+TC4OCO2-1<=>HCOOC(CH3)2CH3+OH        6.50E+04   2.51    3.40E+04      !1-3s 4 member ring  Villano et al., J. PHys. CHem. A, 115 (2011) 13425-13442. E-2.5kcal (2-3kcal factor)
+COTC4O2-2<=>CH3OC(CH3)2CHO+OH        6.50E+04   2.51    3.65E+04      !1-3s 4 member ring  Villano et al., J. PHys. CHem. A, 115 (2011) 13425-13442.
+!_________________________________________________________________________________________________________  
+! 11.ROO+HO2<=>ROOH+O2 :
+!_________________________________________________________________________________________________________  
+TC4OCO2-1+HO2<=>TC4OCO2H+O2  2.000e+11  0.000   650    !As DBE THiOn et al. COmbust. Flame, 185 (2017) 4-15. C4OC4H8OO-a+HO2<=>C4OC4H8OOH-a+O2
+COTC4O2-2+HO2<=>COTC4O2H+O2  2.000e+11  0.000   650    !As DBE THiOn et al. COmbust. Flame, 185 (2017) 4-15. C4OC4H8OO-b+HO2<=>C4OC4H8OOH-b+O2
+!_________________________________________________________________________________________________________  
+! 12.ROO+H2O2<=>ROOH+HO2 :
+!_________________________________________________________________________________________________________  
+TC4OCO2-1+H2O2<=>TC4OCO2H+HO2  2.400e+12  0.000  5000   !As DBE THiOn et al. COmbust. Flame, 185 (2017) 4-15. C4OC4H8OO-a+H2O2<=>C4OC4H8OOH-a+HO2
+COTC4O2-2+H2O2<=>COTC4O2H+HO2  2.400e+12  0.000  5000   !As DBE THiOn et al. COmbust. Flame, 185 (2017) 4-15. C4OC4H8OO-b+H2O2<=>C4OC4H8OOH-b+HO2
+!_________________________________________________________________________________________________________  
+! 13.ROO+CH3O2=>RO+CH3O+O2 :
+!_________________________________________________________________________________________________________  
+TC4OCO2-1+CH3O2<=>TC4OCO-1+CH3O+O2		7.00E15	-1.610	1.86E+03	!NUIG1.3 most alkane ROO+CH3O2=RO+CH3O+O2 A*0.5
+COTC4O2-2+CH3O2<=>COTC4O-2+CH3O+O2		7.00E15	-1.610	1.86E+03	!NUIG1.3 most alkane ROO+CH3O2=RO+CH3O+O2 A*0.5
+!_________________________________________________________________________________________________________  
+! 14.ROO+ROO=>RO+RO+O2 :
+!_________________________________________________________________________________________________________  
+TC4OCO2-1+TC4OCO2-1<=>TC4OCO-1+TC4OCO-1+O2		7.00E15	-1.610	1.86E+03	!NUIG1.3 most alkane ROO+ROO=RO+CH3O+O2 A*0.5
+TC4OCO2-1+COTC4O2-2<=>TC4OCO-1+COTC4O-2+O2		7.00E15	-1.610	1.86E+03	!NUIG1.3 most alkane ROO+ROO=RO+CH3O+O2 A*0.5
+COTC4O2-2+COTC4O2-2<=>COTC4O-2+COTC4O-2+O2		7.00E15	-1.610	1.86E+03	!NUIG1.3 most alkane ROO+ROO=RO+CH3O+O2 A*0.5
+!_________________________________________________________________________________________________________  
+! 15.ROOH<=>RO+OH :
+!_________________________________________________________________________________________________________  
+TC4OCO2H<=>TC4OCO-1+OH 2.106E+22 -2.12  4.383E+04 !As DME Wang et al. CH3OCH2O2H = CH3OCH2O+OH
+COTC4O2H<=>COTC4O-2+OH 4.000e+15  0.000 43000     !As DBE THion et al. COmbust. Flame, 185 (2017) 4-15. C4OC4H8OOH-d<=>C4H9OC4H8O-d+OH
+!_________________________________________________________________________________________________________  
+! 16.RO decomposition :
+!_________________________________________________________________________________________________________  
+TC4OCO-1<=>CH2O+TC4H9O        9.722E+15   -1.10   2.064E+04  !As DME Wang et al. CH3OCH2O = CH3O+CH2O
+COTC4O-2<=>CH2O+CH3OC3H6T      1.000E+11   0.000   11900.0    !As DEE Sakai et al., PrOC. COmbust. Inst., 36 (2017) 195-202. C4H9OaO=CH2O+C3H7Oa      !C-C
+!_________________________________________________________________________________________________________  
+! 17.QOOH<=>cyclic ether+OH :
+!_________________________________________________________________________________________________________  
+TC4OCO2H-2<=>CY(COCCO)(C)C+OH			1.30E+11		0.0		10431.8		! Cyclic ether formation from QOOH  Pengzhi P-P-delta  could down A*0.5
+COTC4O2H-2<=>CY(CCOC)(C)OC+OH			3.69E+11		0.0		16035.1		! Cyclic ether formation from QOOH  Pengzhi P-P-gammy
+COTC4O2H-1<=>CY(COCCO)(C)C+OH			2.60E+11		0.0		8931.8		! Cyclic ether formation from QOOH  Pengzhi P-P-delta   E-1.5kcal   could down 
+!_________________________________________________________________________________________________________  
+! 18.QOOH beta-scission:
+!_________________________________________________________________________________________________________  
+TC4OCO2H-2<=>IC4H8+OCH2O2H				2.23E+13	0.20	2.69E+04		!As C2  CCOOH    C=CC + C  OOH E -1.5kcal Villano et al., J. PHys. CHem. A, 116 (2012) 5068-5089.
+COTC4O2H-1<=>CH2O+IC4H8O2H-T			5.78E+14	-0.20	2.58E+04		!As C  C(C)COOH    C=C + CC  OOH E -1.5kcal Villano et al., J. PHys. CHem. A, 116 (2012) 5068-5089.
+COTC4O2H-2<=>CH3OC(CH3)CH2+CH2O+OH		1.82E+09	1.30	2.37E+04		!As C3  COOH    C2C=C + CH2O + OH Villano et al., J. PHys. CHem. A, 116 (2012) 5068-5089. a/2
+COTC4O2H-2<=>CH3O+IC4H7OOH				4.28E+09	1.35	2.41E+04		!As CCC(C  )COOH    C=COOH + CC   E -3kcal Villano et al., J. PHys. CHem. A, 116 (2012) 5068-5089. a*2
+TC4OCO2H-2<=>CH3+CH3C(CH2)OCH2OOH		8.13E+13	0.00	3.17E+04		!As rate rule of delta-QOOH Villano et al., J. PHys. CHem. A, 116 (2012) 5068-5089.
+COTC4O2H-2<=>CH3+CH3OC(CH2)CH2O2H		1.64E+07	2.00	2.83E+04		!As C3  COOH    C=C(C)COOH + CH3  Villano et al., J. PHys. CHem. A, 116 (2012) 5068-5089.
+!_________________________________________________________________________________________________________  
+! 19.QOOH+O2<=>OOQOOH
+!_________________________________________________________________________________________________________  
+!As R+O2 A/2      
+TC4OCO2H-2+O2<=>TC4OCO2H-2O2			3.435E+16	-1.627		199			! R+O2<=>ROO  Pengzhi P  A/2 a factor of 2-3
+COTC4O2H-2+O2<=>COTC4O2H-2O2			2.404E+16	-1.627		199			! R+O2<=>ROO  Pengzhi P  A/2 a factor of 2-3 A*0.7
+COTC4O2H-1+O2<=>COTC4O2H-1O2			9.350E+11	5.00E-09	-648		! Analogy DME+O2 HPL Rosado-Reyes et al., J. Phys. Chem. A 109 (2005) 10940-10953.   A/2 a factor of 2-3
+!_________________________________________________________________________________________________________  
+! 20.OOQOOH<=>KHP+OH
+!_________________________________________________________________________________________________________  
+TC4OCO2H-2O2<=>HCOOC4H8O2H-K-1+OH				1.00E-06	4.15	5476.3		! OOQOOH<=>KHP+OH NIST FIT
+COTC4O2H-2O2<=>CH3OC4H6O3H-K-2+OH				1.62E+00	3.3		15000.0		! OOQOOH<=>KHP+OH Pengzhi P-P-gamma  
+COTC4O2H-1O2<=>HO2CH2OC4H7O-K-3+OH				3.57E+03	1.7		16600.0		! OOQOOH<=>KHP+OH Pengzhi P-P-delta  A*1.5
+!_________________________________________________________________________________________________________  
+! 21.KHP<=>OQ=O+OH
+!_________________________________________________________________________________________________________  
+HCOOC4H8O2H-K-1<=>OH+CH2O+CH3COCH3+HCO	2.10E+16	0.00 	4.10E+04 ! Ketohydroperoxide decomposition Pengzhi P-P-gamma E -1.5Kcal A*2
+CH3OC4H6O3H-K-2<=>CH3+CH3COCHO+CH2O+OH	2.10E+16	0.00 	4.20E+04 ! Ketohydroperoxide decomposition Pengzhi P-P-beta   A*2
+HO2CH2OC4H7O-K-3<=>TC3H6OCHO+CH2O+OH	2.10E+16	0.00 	4.25E+04 ! Ketohydroperoxide decomposition Pengzhi P-P-gamma  A*2
+!_________________________________________________________________________________________________________  
+! 22.OQ=O decomposition
+!_________________________________________________________________________________________________________  
+!OCH2OC(CH3)2CHO   <=> CH2O+CH3COCH3+HCO    5.17E+20  -3.78     11396    !Wang DME OCH2OCHO => HOCHO+HCO
+!CH2O+CH3COCHO+CH3 <=> OCH2OC(CH3)2CHO      1.30E+11   0.00     7400     !Tran DEE CH3CHO+CH3CO2=C2OC2KETA-1R !GaO et al. CPC 203(2016)212-225
+!_________________________________________________________________________________________________________  
+! 23.KHP=>acid
+!_________________________________________________________________________________________________________  
+CH3OC4H6O3H-K-2<=>CH3OCH(CHO)CH3+HOCHO			2.100E+08	0.000	28000		!A. Jalan, et al., J. Am. CHem. SOC., 135 (2013) 11100-11114. 
+!_________________________________________________________________________________________________________  
+! 24.OOQOOH radical isomerization OOQOOH<=>P(OOH)2  
+!_________________________________________________________________________________________________________  
+TC4OCO2H-2O2<=>HO2CH2OC4H7O2H-2		5.17E+06	1.30	2.19E+04	! 1,5p 6 member Villano C3CCOO =C3 CCOOH 2/3 A, J. PHys. CHem. A, 115 (2011) 13425-13442.
+COTC4O2H-2O2<=>CH2OC4H7O4H2-1		1.03E+06	1.48	1.87E+04	! 1,6 P rate rule E -1.5kcal 3A Villano et al., J. PHys. CHem. A, 115 (2011) 13425-13442.
+COTC4O2H-2O2<=>CH3OC4H6O4H2-2		2.59E+06	1.30	2.19E+04	! 1,5p 6 member Villano C3CCOO =C3 CCOOH 1/3 A , J. PHys. CHem. A, 115 (2011) 13425-13442.
+COTC4O2H-1O2<=>HO2CH2OC4H7O2H-2		2.05E+06	1.48	2.02E+04	! 1,6P rate rule  6A Villano et al., J. PHys. CHem. A, 115 (2011) 13425-13442.
+!_________________________________________________________________________________________________________  
+! 25.P(OOH)2<=>cyclic ether+OH :
+!_________________________________________________________________________________________________________  
+HO2CH2OC4H7O2H-2<=>CY(CCOC)(C)OCOO+OH		3.69E+11		0.0		16035.1		! Cyclic ether formation from QOOH  Pengzhi P-P-gammy
+HO2CH2OC4H7O2H-2<=>CY(COCCO)(C)COO+OH		1.30E+11		0.0		10431.8		! Cyclic ether formation from QOOH  Pengzhi P-P-delta  could down A*0.5
+CH2OC4H7O4H2-1<=>CY(COCCO)(C)COO+OH			2.60E+11		0.0		7931.8		! Cyclic ether formation from QOOH  Pengzhi P-P-delta   Ea-2.5 kcal 
+!CH2OC4H7O4H2-1<=>CY(COCCO)(C)COO+OH			2.60E+11		0.0		10431.8		! Cyclic ether formation from QOOH  Pengzhi P-P-delta
+CH3OC4H6O4H2-2<=>CY(CCOC)(OC)COO+OH			3.69E+11		0.0		16035.1		! Cyclic ether formation from QOOH  Pengzhi P-P-gammy
+!_________________________________________________________________________________________________________  
+! 26. P(OOH)2 beta-scission:
+!_________________________________________________________________________________________________________  
+HO2CH2OC4H7O2H-2<=>IC4H7OOH+OCH2O2H			2.23E+13	0.20	2.69E+04		!As C2  CCOOH    C=CC + C  OOH E -1.5kcal Villano et al., J. PHys. CHem. A, 116 (2012) 5068-5089.
+HO2CH2OC4H7O2H-2<=>CH3C(CH2)OCH2OOH+CH2O+OH	3.64E+09	1.30	2.37E+04		!As C3  COOH    C2C=C + CH2O + OH Villano et al., J. PHys. CHem. A, 116 (2012) 5068-5089.
+HO2CH2OC4H7O2H-2<=>HO2COC(CH2)CO2H+CH3		8.13E+13	0.00	3.32E+04		!As rate rule of gamma/delta-QOOH Villano et al., J. PHys. CHem. A, 116 (2012) 5068-5089.
+CH2OC4H7O4H2-1<=>CH2O+IIC4H7Q2-T			5.78E+14	-0.20	2.58E+04		!As C  C(C)COOH    C=C + CC  OOH E -1.5kcal Villano et al., J. PHys. CHem. A, 116 (2012) 5068-5089. 
+CH3OC4H6O4H2-2<=>CH3O+IC4H6Q2-II			2.14E+09	1.35	2.56E+04		!As CCC(C  )COOH    C=COOH + CC   E -1.5kcal Villano et al., J. PHys. CHem. A, 116 (2012) 5068-5089.
+CH3OC4H6O4H2-2<=>CH3OC(CH2)CH2O2H+CH2O+OH	3.64E+09	1.30	2.37E+04		!As C3  COOH    C2C=C + CH2O + OH Villano et al., J. PHys. CHem. A, 116 (2012) 5068-5089.
+!_________________________________________________________________________________________________________  
+! 27.H-abstraction of KHP follOwed by O-O scission
+!_________________________________________________________________________________________________________  
+HCOOC4H8O2H-K-1+OH=>HCOOC(CH3)2CHO+H2O+OH              1.000E+12  0.00  0.000E+00  !As DEE Tran et al. C2OC2KETB-1+OH=>CC(O)OCCO+H2O+OH
+HCOOC4H8O2H-K-1+HO2=>HCOOC(CH3)2CHO+H2O2+OH            2.800E+12  0.00  1.601E+04  !As EME Fan et al. HCOOCH2CH2O2H+HO2=>HCOOCH2CHO+OH+H2O2   !As DEE Tran et al. C2OC2KETA-1+HO2=>AA+OH+H2O2
+CH3OC4H6O3H-K-2+OH=>CH3OC(CHO)2CH3+H2O+OH              1.000E+12  0.00  0.000E+00  !As DEE Tran et al. C2OC2KETA-1+OH=>AA+OH+H2O
+CH3OC4H6O3H-K-2+HO2=>CH3OC(CHO)2CH3+H2O2+OH            2.800E+12  0.00  1.601E+04  !As DEE Tran et al. C2OC2KETA-1+HO2=>AA+OH+H2O2
+HO2CH2OC4H7O-K-3+OH=>HCOOC(CH3)2CHO+H2O+OH             2.000E+12  0.00  0.000E+00  !As EME Fan et al. HO2CH2OCH2CHO+OH=>HCOOCH2CHO+OH+H2O     !Analogy DEE Tran et al. C2OC2KETA-1+OH=>AA+OH+H2O (A*2 considering H number)
+HO2CH2OC4H7O-K-3+HO2=>HCOOC(CH3)2CHO+H2O2+OH           5.600E+12  0.00  1.601E+04  !As EME Fan et al. HO2CH2OCH2CHO+HO2=>HCOOCH2CHO+OH+H2O2   !Analogy DEE Tran et al. C2OC2KETA-1+HO2=>AA+OH+H2O2 (A*2 considering H number)
+!_________________________________________________________________________________________________________  
+! 28.Aldehyde ketone reactions
+!_________________________________________________________________________________________________________  
+HCOOC(CH3)2CHO+OH=>OCHO+IC3H5CHO+H2O               3.513E+03   2.85    -1.580E+03    !As MTBE  MTBE+OH<=>TC4H8OCH3+H2O   (A2/3 considering H number) !CalCulatiOn ZHOu et al.
+HCOOC(CH3)2CHO+HO2=>OCHO+IC3H5CHO+H2O2             7.313E-04   4.70    1.303E+04     !As MTBE  MTBE+HO2<=>TC4H8OCH3+H2O2 (A2/3 considering H number) !CalCulatiOn!Hu et al.2017
+HCOOC(CH3)2CHO+OH=>HCO+HOCHO+C3H4-P+H2O            3.513E+03   2.85    -1.580E+03    !As MTBE  MTBE+OH<=>TC4H8OCH3+H2O   (A2/3 considering H number) !CalCulatiOn ZHOu et al.
+HCOOC(CH3)2CHO+HO2=>HCO+HOCHO+C3H4-P+H2O2          7.313E-04   4.70    1.303E+04     !As MTBE  MTBE+HO2<=>TC4H8OCH3+H2O2 (A2/3 considering H number) !CalCulatiOn!Hu et al.2017
+HCOOC(CH3)2CHO+OH =>CH3+HOCHO+C2H2+CO+H2O          3.513E+03   2.85    -1.580E+03    !As MTBE  MTBE+OH<=>TC4H8OCH3+H2O   (A2/3 considering H number) !CalCulatiOn ZHOu et al.
+HCOOC(CH3)2CHO+HO2=>CH3+HOCHO+C2H2+CO+H2O2         7.313E-04   4.70    1.303E+04     !As MTBE  MTBE+HO2<=>TC4H8OCH3+H2O2 (A2/3 considering H number) !CalCulatiOn!Hu et al.2017
+HCOOC(CH3)2CHO+OH=>CO2+TC3H6CHO+H2O                1.290E+06   2.06	   2.750E+03     !As EME Fan et al. HCOOCH2CHO+OH=>CO2+CH2CHO+H2O    !MetHyl fOrmate Tan et al. J. PHys. CHem. A 116(2012) 8431-8443
+HCOOC(CH3)2CHO+HO2=>CO2+TC3H6CHO+H2O2              4.060E+00   3.68	   1.576E+04     !As EME Fan et al. HCOOCH2CHO+HO2=>CO2+CH2CHO+H2O2  !MetHyl fOrmate Tan et al. J. PHys. CHem. A 116(2012) 8431-8443
+HCOOC(CH3)2CHO+OH=>OCHO+IC3H6CO+H2O                2.80E+012   0.00    7.090E+02     !As EME Fan et al. HCOOCH2CHO+OH=>OCHO+CH2CO+H2O      !As CH3CHO NUIGMeCH1.1
+HCOOC(CH3)2CHO+HO2=>OCHO+IC3H6CO+H2O2              1.70E+013   0.00    1.629E+04     !As EME Fan et al. HCOOCH2CHO+HO2=>OCHO+CH2CO+H2O2    !As CH3CHO NUIGMeCH1.1
+
+CH3OC(CHO)2CH3+OH=>CH2O+C2H5+2CO+H2O               0.975E+07   1.89     -366         !As MTBE  MTBE+OH<=>TC4H9OCH2+H2O     !Carr et al.  J. PHys. CHem. A 117 (2013) 11142-11154.!AlsO as DME Wang et al. CH3OCH3+OH = CH3OCH2+H2O
+CH3OC(CHO)2CH3+HO2=>CH2O+C2H5+2CO+H2O2             1.000E+13   0.00     1.650E+04    !As MTBE  MTBE+HO2<=>TC4H9OCH2+H2O2   !Analogy DME Wang et al. CH3OCH3+CH3 = CH3OCH2+CH4 (A/2 considering H number)
+CH3OC(CHO)2CH3+OH=>CH3O+C2H2+2HCO+H2O              1.756E+03   2.85    -1.580E+03    !As MTBE  MTBE+OH<=>TC4H8OCH3+H2O   (A1/3 considering H number) !CalCulatiOn ZHOu et al.                   
+CH3OC(CHO)2CH3+HO2=>CH3O+C2H2+2HCO+H2O2            3.756E-04   4.70    1.303E+04     !As MTBE  MTBE+HO2<=>TC4H8OCH3+H2O2 (A1/3 considering H number) !CalCulatiOn!Hu et al.2017
+CH3OC(CHO)2CH3+OH=>CH3O+IC4YAA+H2O                 1.756E+03   2.85    -1.580E+03    !As MTBE  MTBE+OH<=>TC4H8OCH3+H2O   (A1/3 considering H number) !CalCulatiOn ZHOu et al.   
+CH3OC(CHO)2CH3+HO2=>CH3O+IC4YAA+H2O2               3.756E-04   4.70    1.303E+04     !As MTBE  MTBE+HO2<=>TC4H8OCH3+H2O2 (A1/3 considering H number) !CalCulatiOn!Hu et al.2017
+
+CH3OC(CH3)2CHO+OH<=>CH2O+IC3H7+CO+H2O              0.975E+07   1.89     -366         !As MTBE  MTBE+OH<=>TC4H9OCH2+H2O     !Carr et al.  J. PHys. CHem. A 117 (2013) 11142-11154.!AlsO as DME Wang et al. CH3OCH3+OH = CH3OCH2+H2O
+CH3OC(CH3)2CHO+HO2<=>CH2O+IC3H7+CO+H2O2            1.000E+13   0.00     1.650E+04    !As MTBE  MTBE+HO2<=>TC4H9OCH2+H2O2   !Analogy DME Wang et al. CH3OCH3+CH3 = CH3OCH2+CH4 (A/2 considering H number)
+CH3OC(CH3)2CHO+OH=>CH3O+C3H5-T+HCO+H2O             3.512E+03   2.85    -1.580E+03    !As MTBE  MTBE+OH<=>TC4H8OCH3+H2O   (A2/3 considering H number) !CalCulatiOn ZHOu et al.                                
+CH3OC(CH3)2CHO+HO2=>CH3O+C3H5-T+HCO+H2O2           7.512E-04   4.70    1.303E+04     !As MTBE  MTBE+HO2<=>TC4H8OCH3+H2O2 (A2/3 considering H number) !CalCulatiOn!Hu et al.2017
+CH3OC(CH3)2CHO+OH=>CH3+CH3COCH3+CO+H2O             1.756E+03   2.85    -1.580E+03    !As MTBE  MTBE+OH<=>TC4H8OCH3+H2O   (A1/3 considering H number) !CalCulatiOn ZHOu et al.   
+CH3OC(CH3)2CHO+HO2=>CH3+CH3COCH3+CO+H2O2           3.756E-04   4.70    1.303E+04     !As MTBE  MTBE+HO2<=>TC4H8OCH3+H2O2 (A1/3 considering H number) !CalCulatiOn!Hu et al.2017
+
+CH3OCH(CHO)CH3+OH<=>CH2O+C2H5+CO+H2O             0.975E+07   1.89     -366         !As MTBE  MTBE+OH<=>TC4H9OCH2+H2O     !Carr et al.  J. PHys. CHem. A 117 (2013) 11142-11154.!AlsO as DME Wang et al. CH3OCH3+OH = CH3OCH2+H2O
+CH3OCH(CHO)CH3+HO2<=>CH2O+C2H5+CO+H2O2           1.000E+13   0.00     1.650E+04    !As MTBE  MTBE+HO2<=>TC4H9OCH2+H2O2   !Analogy DME Wang et al. CH3OCH3+CH3 = CH3OCH2+CH4 (A/2 considering H number)
+CH3OCH(CHO)CH3+OH=>CH3O+C2H3+HCO+H2O             3.512E+03   2.85    -1.580E+03    !As MTBE  MTBE+OH<=>TC4H8OCH3+H2O   (A2/3 considering H number) !CalCulatiOn ZHOu et al.                                
+CH3OCH(CHO)CH3+HO2=>CH3O+C2H3+HCO+H2O2           7.512E-04   4.70    1.303E+04     !As MTBE  MTBE+HO2<=>TC4H8OCH3+H2O2 (A2/3 considering H number) !CalCulatiOn!Hu et al.2017
+CH3OCH(CHO)CH3+OH=>CH3O+C2H4+CO+H2O             1.756E+03   2.85    -1.580E+03    !As MTBE  MTBE+OH<=>TC4H8OCH3+H2O   (A1/3 considering H number) !CalCulatiOn ZHOu et al.   
+CH3OCH(CHO)CH3+HO2=>CH3O+C2H4+CO+H2O2           3.756E-04   4.70    1.303E+04     !As MTBE  MTBE+HO2<=>TC4H8OCH3+H2O2 (A1/3 considering H number) !CalCulatiOn!Hu et al.2017
+CH3OCH(CHO)CH3+OH=>CH3+CH3CHO+CO+H2O           2.260E+03    2.730   -4.6890E+03    !As DIPE  DIPE+OH<=>IC3H7OC(CH3)2+H2O   (A1/2 considering H number) !CalCulatiOn ZHOu et al.   
+CH3OCH(CHO)CH3+HO2=>CH3+CH3CHO+CO+H2O2         7.165E+00    3.460    9.7330E+03    !As DIPE  DIPE+HO2<=>IC3H7OC(CH3)2+H2O2  (A1/2 considering H number) !CalCulatiOn!Hu et al.2017
+
+!_________________________________________________________________________________________________________  
+! 29.Cyclic ether reactions
+!_________________________________________________________________________________________________________ 
+CY(COCCO)(C)C+OH=>OCHO+IC4H8+H2O          1.20E+06	2.00	-3331 !As DEE Tran et al. C2OC2OA-2+OH=>H2O+C2H4+CH3CO2
+CY(COCCO)(C)C+OH=>HCO+IC3H7CHO+H2O        2.40E+06	2.00	-2937 !As DEE Tran et al. C2OC2OA-2+OH=>H2O+CH3CHO+CH2CHO 
+CY(COCCO)(C)C+H=>OCHO+IC4H8+H2            1.70E+08	1.69	2200  !As DEE Tran et al. C2OC2OA-2+H=>H2+C2H4+CH3CO2
+CY(COCCO)(C)C+H=>HCO+IC3H7CHO+H2          3.30E+07	1.87	3300  !As DEE Tran et al. C2OC2OA-2+H=>H2+CH3CHO+CH2CHO 
+CY(COCCO)(C)C+HO2=>OCHO+IC4H8+H2O2        2.52E+02	3.37	13700 !As DEE Tran et al. C2OC2OA-2+HO2=>H2O2+C2H4+CH3CO2
+CY(COCCO)(C)C+HO2=>HCO+IC3H7CHO+H2O2      7.79E+00	3.53	7890  !As DEE Tran et al. C2OC2OA-2+HO2=>H2O2+CH3CHO+CH2CHO 
+CY(COCCO)(C)C+CH3=>OCHO+IC4H8+CH4         3.90E+02	2.91	5300  !As DEE Tran et al. C2OC2OA-2+CH3=>CH4+C2H4+CH3CO2 
+CY(COCCO)(C)C+CH3=>HCO+IC3H7CHO+CH4       4.70E+02	2.95	6600  !As DEE Tran et al. C2OC2OA-2+CH3=>CH4+CH3CHO+CH2CHO  
+CY(COCCO)(C)C+O2=>OCHO+IC4H8+HO2          7.94E+13	0.00	51731  !As DEE Tran et al. C2OC2OA-2+CH3=>CH4+C2H4+CH3CO2 
+CY(COCCO)(C)C+O2=>HCO+IC3H7CHO+HO2        4.00E+13	0.00	46247  !As DEE Tran et al. C2OC2OA-2+CH3=>CH4+CH3CHO+CH2CHO  
+
+CY(CCOC)(C)OC+OH=> CH3O+C3H4-P+CH2O+H2O       2.260E+03    2.730   -4.68900E+03 !As DIPE 2020 PCI Fan et al. 
+CY(CCOC)(OC)COO+OH=> CH3O+C2H+2CH2O+H2O+OH    2.260E+03    2.730   -4.68900E+03 !As DIPE 2020 PCI Fan et al. 
+CY(CCOC)(C)OCOO+OH=> HO2+C3H4-P+2CH2O+H2O     2.260E+03    2.730   -4.68900E+03 !As DIPE 2020 PCI Fan et al.
+
+CY(COCCO)(C)COO+OH=>OCHO+IC4H7OOH+H2O       1.20E+06	2.00	-3331  !As DEE Tran et al. C2OC2OA-2+OH=>H2O+C2H4+CH3CO2
+CY(COCCO)(C)COO+OH=>HCO+IC4KETII+H2O        2.40E+06	2.00	-2937  !As DEE Tran et al. C2OC2OA-2+OH=>H2O+CH3CHO+CH2CHO 
+CY(COCCO)(C)COO+H=>OCHO+IC4H7OOH+H2         1.70E+08	1.69	2200   !As DEE Tran et al. C2OC2OA-2+H=>H2+C2H4+CH3CO2
+CY(COCCO)(C)COO+H=>HCO+IC4KETII+H2          3.30E+07	1.87	3300   !As DEE Tran et al. C2OC2OA-2+H=>H2+CH3CHO+CH2CHO 
+CY(COCCO)(C)COO+HO2=>OCHO+IC4H7OOH+H2O2     2.52E+02	3.37	13700  !As DEE Tran et al. C2OC2OA-2+HO2=>H2O2+C2H4+CH3CO2
+CY(COCCO)(C)COO+HO2=>HCO+IC4KETII+H2O2      7.79E+00	3.53	7890   !As DEE Tran et al. C2OC2OA-2+HO2=>H2O2+CH3CHO+CH2CHO 
+CY(COCCO)(C)COO+CH3=>OCHO+IC4H7OOH+CH4      3.90E+02	2.91	5300   !As DEE Tran et al. C2OC2OA-2+CH3=>CH4+C2H4+CH3CO2 
+CY(COCCO)(C)COO+CH3=>HCO+IC4KETII+CH4       4.70E+02	2.95	6600   !As DEE Tran et al. C2OC2OA-2+CH3=>CH4+CH3CHO+CH2CHO  
+CY(COCCO)(C)COO+O2=>OCHO+IC4H7OOH+HO2       7.94E+13	0.00	51731  !As DEE Tran et al. C2OC2OA-2+CH3=>CH4+C2H4+CH3CO2 
+CY(COCCO)(C)COO+O2=>HCO+IC4KETII+HO2        4.00E+13	0.00	46247  !As DEE Tran et al. C2OC2OA-2+CH3=>CH4+CH3CHO+CH2CHO 
+!_________________________________________________________________________________________________________  
+! 30.Other reactions
+!_________________________________________________________________________________________________________
+CH3OC(CH3)CH2 <=>CH3O+C3H5-T            8.92E+24	-2.40	9.9E+04    ! Ref NUIG1.3 analogy with  AC5H10<=>C3H5-T+C2H5  E -1.5Kcal                             
+TC4H9+OCHO<=>HCOOC(CH3)2CH3             1.00E+13	0.00	0.00       ! Ref NUIG1.3 analogy with CH3+OCHO<=>CH3OCHO 
+CH3C(CH2)OCH2OOH<=>CH3COCH2+CH2O+OH     7.40E+13	0.10	2.28e+04   !As DEE Tran et al. 2019 C2OC2-BO2H-A=>C2H5+CH2O+HCO+OH
+CH3OC(CH2)CH2O2H<=>CH3+CH2CO+CH2O+OH    7.40E+13	0.10	2.28e+04   !As DEE Tran et al. 2019 C2OC2-BO2H-A=>C2H5+CH2O+HCO+OH
+!++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+!\END_KINETICS_MODULE: MTBE
+!++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+

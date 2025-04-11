@@ -1,0 +1,876 @@
+!++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+!\KINETICS_MODULE: NH3+NOX
+!++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+! Updated NH3/H2/NOx chemistry by Yuxiang Zhu, 17 November 2023
+!
+!x1.3 Reference: D.F. Davidson, K. Kohse-Hoinghaus, A.Y. Chang, R.K. Hanson, A pyrolysis mechanism for ammonia, International Journal of Chemical Kinetics 22 (1990) 513-
+NH3+M=H+NH2+M    2.86E16 0.0 9.347E4
+!T.L. Nguyen, J.F. Stanton, Ab initio thermal rate coefficients for H + NH3 = H2 + NH2, International Journal of Chemical Kinetics 51 (2019) 321-328.
+H+NH3=H2+NH2    2.89E6 2.23 1.04E4
+!(Adjusted) S.J. Klippenstein, L.B. Harding, B. Ruscic, R. Sivaramakrishnan, N.K. Srinivasan, M.-C. Su, J.V. Michael, J. Phys. Chem. A 113 (2009) 10241   10259.
+NH3+O=NH2+OH    9.33E1 3.29 3.67E3
+!(Adjusted) Stagni, A. et al. React. Chem. Eng. doi:10.1039/C9RE00429G(2020).
+NH3+OH=H2O+NH2    1.09E5 2.37 -1.81E2
+!Stagni, A. et al. React. Chem. Eng. doi:10.1039/C9RE00429G(2020).
+HO2+NH3=H2O2+NH2    1.173E0 3.839 1.726E4
+!CIS _ TRANS; S. Xu, M.C. Lin, Int J Chem Kinet 41: 667   677, 2009
+NH3+NO2=HONO+NH2    4.235619E-10 6.48 2.70076482E4
+    DUP
+!CIS _ TRANS; S. Xu, M.C. Lin, Int J Chem Kinet 41: 667   677, 2009
+NH3+NO2=HONO+NH2    2.683758E-1 4.02 2.3250478E4
+    DUP
+!Thaxton, A.G.; Hsu, C.C.; Lin, M.C. Int. J. Chem. Kinet. 29 245-251 (1997)
+NH3+NO2=HNO2+NH2    2.45014E11 0.0 2.50956023E4
+!J. Deppe, Berichte der Bunsengesellschaft f  r physikalische Chemie 102 (1998) 1474-1485.
+NH2+M=H+NH+M    1.2E15 0.0 7.600275E4
+! Y. Li, S.M. Sarathy, Int. J. Hydrogen Energy 45 (2020) 23624-23637.
+H+NH2=H2+NH    1.09E5 2.59 1.81E3
+! Klippenstein, S. J., Mulvihill, C. R., _ Glarborg, P. (2023). Theoretical Kinetics Predictions for Reactions on the NH2O Potential Energy Surface. The Journal of Physi
+NH2+O=NH+OH    3.09E3 2.84 -2.78E3
+!SJ Klippenstein LB Harding B Ruscic R Sivaramakrishnan NK Srinivasan M-C Su JV Michael JPCA 113 (2009) 10241-10259.
+NH2+OH=H2O+NH    3.3E6 1.949 -2.17E2
+!SJ Klippenstein LB Harding B Ruscic R Sivaramakrishnan NK Srinivasan M-C Su JV Michael JPCA 113 (2009) 10241-10259.
+2NH2=NH+NH3    5.636E0 3.53 5.526E2
+!SJ Klippenstein LB Harding B Ruscic R Sivaramakrishnan NK Srinivasan M-C Su JV Michael JPCA 113 (2009) 10241-10259.
+2NH=N+NH2    5.66E-1 3.88 3.42E2
+! Klippenstein, S. J., Mulvihill, C. R., _ Glarborg, P. (2023). Theoretical Kinetics Predictions for Reactions on the NH2O Potential Energy Surface. The Journal of Physi
+NH2+O=H+HNO    2.78E13 -0.065 -1.88E2
+! Klippenstein, S. J., Mulvihill, C. R., _ Glarborg, P. (2023). Theoretical Kinetics Predictions for Reactions on the NH2O Potential Energy Surface. The Journal of Physi
+NH2+O=H2+NO    2.38E12 0.112 -3.47E2
+!Mousavipour, S.H. et al. J. Phys. Chem. A 113 12961-12971 (2009)
+NH2+OH=H+H2NO    6.3812E13 0.0 1.84273423E4
+!CIS _ TRANS; Mousavipour, S.H. et al. J. Phys. Chem. A 113 12961-12971 (2009)
+NH2+OH=H+HNOH    6.3812E13 0.0 3.13097514E4
+    DUP
+!CIS _ TRANS; Mousavipour, S.H. et al. J. Phys. Chem. A 113 12961-12971 (2009)
+NH2+OH=H+HNOH    4.9966E13 0.0 2.58126195E4
+    DUP
+! S.J. Klippenstein et al. / Combustion and Flame 158 (2011) 774   789
+NH2+O2=HNO+OH    2.9E-2 3.764 1.8185E4
+!x0.5 Henning (Wagner grp) 1995
+NH2+O2=H2NO+O    3.0E13 0.0 2.98E4
+!S.J. Klippenstein and P. Glarborg Combustion and Flame 236 (2022) 111787
+HO2+NH2=NH3+O2    6.04E18 -1.91 3.06E2
+    DUP
+HO2+NH2=NH3+O2    5.91E7 1.59 -1.373E3
+    DUP
+!x 2.5 S.J. Klippenstein and P. Glarborg Combustion and Flame 236 (2022) 111787
+HO2+NH2=H2NO+OH    2.55E12 0.166 -9.38E2
+!S.J. Klippenstein and P. Glarborg Combustion and Flame 236 (2022) 111787
+HO2+NH2=H2O+HNO    2.19E9 0.791 -1.428E3
+!S. Song R.K. Hanson C.T. Bowman D.M. Golden Int J Chem Kinet 33 715-721, 2001 (kT)
+NH2+NO=NNH+OH    4.3E10 0.294 -8.66E2
+!S. Song R.K. Hanson C.T. Bowman D.M. Golden Int J Chem Kinet 33 715-721, 2001 (kT)
+NH2+NO=H2O+N2    2.6E19 -2.369 8.7E2
+!x 0.9 Klippenstein et al., J. Phys. Chem. A 2013, 117, 9011   9022
+NH2+NO2=H2NO+NO    8.18E11 0.032 -1.51E3
+!Klippenstein et al., J. Phys. Chem. A 2013, 117, 9011   9022
+NH2+NO2=H2O+N2O    2.6E18 -2.19 4.55E2
+! D.F. Davidson, K. Kohse-Hoinghaus, A.Y. Chang, R.K. Hanson, A pyrolysis mechanism for ammonia, International Journal of Chemical Kinetics 22 (1990) 513-535.
+NH+NH2=H+N2H2    1.5E15 -0.5 0.0E0
+!Ratio est. 65/35; Dransfeld, P., _ Wagner, H. G. (1987). Investigation of the gas phase reaction N+ NH2    N2+ 2H at room temperature. Zeitschrift f  r Physikalische Ch
+N+NH2=>2H+N2    4.55E13 0.0 0.0E0
+!Ratio est. 65/35; Dransfeld, P., _ Wagner, H. G. (1987). Investigation of the gas phase reaction N+ NH2    N2+ 2H at room temperature. Zeitschrift f  r Physikalische Ch
+N+NH2=H2+N2    2.45E13 0.0 0.0E0
+!SJ Klippenstein LB Harding B Ruscic R Sivaramakrishnan NK Srinivasan M-C Su JV Michael JPCA 113 (2009) 10241-10259.
+2NH2=H2+N2H2    1.74E8 1.02 1.1783E4
+!SJ Klippenstein LB Harding B Ruscic R Sivaramakrishnan NK Srinivasan M-C Su JV Michael JPCA 113 (2009) 10241-10259.
+2NH2=H2+H2NN    7.17E4 1.88 8.802E3
+! Marshall, P., _ Glarborg, P. (2023). The Journal of Physical Chemistry A, 127(11), 2601-2607.
+NH2+NH3=H2+N2H3    1.5E13 0.0 5.89E4
+!J. Deppe, G. Friedrichs, A. Ibrahim, H.-J. Romming, H.G. Wagner, The Thermal Decomposition of NH2 and NH Radicals, Berichte der Bunsengesellschaft fur physikalische Che
+NH+M=H+N+M    1.8E14 0.0 7.476E4
+!C.-X. Yao, P.-Y. Zhang, Z.-X. Duan, G.-J. Zhao, Theoretical Chemistry Accounts 133 (2014) 1489.
+H+NH=H2+N    1.65E11 0.71 9.31E2
+!R. Guadagnini, G.C. Schatz, S.P. Walch, J. Chem. Phys. 102 (1995) 784-791.
+NH+O=N+OH    2.07E10 0.622 -3.58E2
+! Klippenstein, S. J., Mulvihill, C. R., _ Glarborg, P. (2023). Theoretical Kinetics Predictions for Reactions on the NH2O Potential Energy Surface. The Journal of Physi
+NH+OH=H2O+N    2.61E7 1.66 -9.45E2
+!SJ Klippenstein LB Harding B Ruscic R Sivaramakrishnan NK Srinivasan M-C Su JV Michael JPCA 113 (2009) 10241-10259.
+NH+NH2=N+NH3    9.57E3 2.46 1.07E2
+! Li, A., Xie, C., Xie, D., _ Guo, H. (2011). A global ab initio potential energy surface for HNO (a3A    ) and quantum mechanical studies of vibrational states and reac
+NH+O=H+NO    1.41E14 -0.21603 4.637343E1
+! Klippenstein, S. J., Mulvihill, C. R., _ Glarborg, P. (2023). Theoretical Kinetics Predictions for Reactions on the NH2O Potential Energy Surface. The Journal of Physi
+NH+OH=H+HNO    1.51E14 -0.314 -3.08E2
+! Klippenstein, S. J., Mulvihill, C. R., _ Glarborg, P. (2023). Theoretical Kinetics Predictions for Reactions on the NH2O Potential Energy Surface. The Journal of Physi
+NH+OH=H2+NO    3.43E13 -0.303 -3.36E2
+!Elishav et al., Chem. Rev. 2020, 120, 5352   5436 // Fit
+NH+O2=HNO+O    3.32E9 1.034 1.142E4
+!Ro  mming, H. J.; Wagner, H. G. A Kinetic Study of the Reactions of NH(X3     ) with O2 and No in the Temperature Range from 1200 to 2200 K. Symp. Combust., [Proc.] 199
+NH+O2=NO+OH    4.5E8 0.79 1.195E3
+!SJ Klippenstein et al J Phys Chem A 113 10241-10259 (2009)
+2NH=>H2+N2    6.26E12 -0.036 -1.609E2
+!SJ Klippenstein et al J Phys Chem A 113 10241-10259 (2009)
+2NH=>2H+N2    5.634E13 -0.036 -1.609E2
+!Caridade ETAL, J. Phys. Chem. A, 109, 2356 - 2363, 2005
+N+NH=H+N2    6.42E11 0.51 1.91E1
+! x 1/1.2; Baulch, D. L., Bowman, C. T., Cobos, C. J., Cox, R. A., Just, T., Kerr, J. A., ... _ Warnatz, J. (2005). Journal of physical and chemical reference data, 34(3
+NH+NO=H+N2O    2.25E15 -0.78 2.0E1
+! Baulch, D. L., Bowman, C. T., Cobos, C. J., Cox, R. A., Just, T., Kerr, J. A., ... _ Warnatz, J. (2005). Journal of physical and chemical reference data, 34(3), 757-13
+NH+NO=N2+OH    6.8E14 -0.78 2.0E1
+!ratio 59-41
+NH+NO2=HNO+NO    5.718398E12 0.0 0.0E0
+!ratio 59-41
+NH+NO2=N2O+OH    3.973802E12 0.0 0.0E0
+!P. Dagaut, F. Lecomte, S. Chevailler, M. Cathonnet, Experimental and Detailed Kinetic Modeling of Nitric Oxide Reduction by a Natural Gas Blend in Simulated Reburning C
+N2+M=2N+M    1.89E18 -0.85 2.2495E5
+    H2O/16.25/
+! Ge, M. H., Chu, T. S., _ Han, K. L. (2008). An accurate quantum dynamics study of the N+ OH reaction. Journal of Theoretical and Computational Chemistry, 7(04), 607-61
+N+OH=H+NO    1.85E14 -0.30941 3.98725E0
+! Baulch, D. L., Bowman, C. T., Cobos, C. J., Cox, R. A., Just, T., Kerr, J. A., ... _ Warnatz, J. (2005). Journal of physical and chemical reference data, 34(3), 757-13
+N+O2=NO+O    5.84E9 1.01 6.2E3
+N+NO=N2+O                              7.46141000E+13    -5.71100000E-02    2.28083620E+03 ! Yuxiang Zhu; REFIT NIST, !NEW 6-PARA ARRHENIUS FIT 07/2024 (AVOID NEGATIVE A-FACTOR)
+DUP
+N+NO=N2+O                              3.22982000E+18    -1.88075000E+00    7.56899750E+02 ! Yuxiang Zhu; REFIT NIST, !NEW 6-PARA ARRHENIUS FIT 07/2024 (AVOID NEGATIVE A-FACTOR)
+DUP
+!SJK 2009 HPL
+!ALTINAY 2015 LPL _ TROE PARAMETERS
+!P. Glarborg et al., J. Phys. Chem. A 125 (2021) 1505-1516
+2NH2(+M)=N2H4(+M)    5.62E14 -0.414 6.56E1
+    AR/0.59/
+    N2/1.0/
+    NH3/4.87/
+    O2/0.69/
+    LOW/4.13E28 -3.41E0 0.0E0/
+    TROE/1.3E-1 1.0E-30 1.0E30 1.0E30/
+!A. Dean, J. Bozzelli, Combustion Chemistry of Nitrogen, (2000).
+N2H4=H2+H2NN    1.0E0 0.0 0.0E0
+    PLOG/1.0E-1 4.0E44 -9.85E0 7.1353E4/
+    PLOG/1.0E0 5.3E39 -8.35E0 6.9307E4/
+    PLOG/1.0E1 2.5E39 -8.19E0 6.9664E4/
+!N. Kanno, T. Kito, Theoretical study on the hydrogen abstraction reactions from hydrazine derivatives by H atom, International Journal of Chemical Kinetics 52 (2020) 54
+H+N2H4=H2+N2H3    2.76E5 2.56 1.22E3
+!Vaghjiani 1996 data fitted
+N2H4+O=N2H3+OH    4.5E11 0.0 -1.27E3
+!Mai 2019 fitted
+N2H4+OH=H2O+N2H3    1.51E8 1.64915 -1.50396476E3
+!S. Asgharzade et al. / Computational and Theoretical Chemistry 1104 (2017) 47   55
+N2H4+O2=HO2+N2H3    5.05E12 0.0 3.21E4
+!GAO 2022
+N2H4+NH2=N2H3+NH3    3.8E1 3.44 -5.74E2
+!DANA ET AL., J. Phys. Chem. A 2019, 123, 4679   4692
+N2H4+NH=N2H3+NH2    6.09E1 3.61 5.80783939E3
+!A.A. Konnov, J. De Ruyck, Kinetic modeling of the decomposition and flames o
+N+N2H4=N2H3+NH    1.0E10 1.0 2.0E3
+!P. Raghunath and Y.H. Lin and M.C. Lin, Comp. Theor. Chem. 1046, 73-80, 2014
+N2H4+NO=HNO+N2H3    6.0E1 3.16 3.0845E4
+!P. Raghunath and Y.H. Lin and M.C. Lin, Comp. Theor. Chem. 1046, 73-80, 2014
+N2H4+NO2=HNO2+N2H3    2.4E-2 4.14 7.946E3
+!P. Raghunath and Y.H. Lin and M.C. Lin, Comp. Theor. Chem. 1046, 73-80, 2014
+N2H4+NO2=HONO+N2H3    8.2E1 3.13 8.86E3
+!Vaghjiani GL JPC 104:5479-5489 1996 // Vaghjiani GL JPCA 105:4682-4690 2001
+N2H4+O=H2O+N2H2    2.9E11 0.0 -1.27E3
+!A.A. Konnov, J. De Ruyck, Kinetic modeling of the decomposition and flames of hydrazine, Combustion and Flame 124 (2001) 106-126.
+H+N2H4=NH2+NH3    2.4E9 0.0 3.1E3
+! Reverse rate constant from Klippenstein et al., Thermal Decompos
+! Journal of Physical Chemistry A, 2009, Vol. 113, pp. 10241-10259
+!P. Di  vart, L. Catoire, Contributions of Experimental Data Obtained in Concentrated Mixtures to Kinetic Studies: Application to Monomethylhydrazine Pyrolysis, The Jour
+N2H3(+M)=NH+NH2(+M)    1.479E13 -0.179 8.8748E4
+    AR/1.0/
+    C2H6/4.5/
+    CH4/3.0/
+    H2/3.0/
+    HE/1.0/
+    NH3/3.0/
+    LOW/3.344E42 -6.531E0 1.262113E5/
+    TROE/6.06E-1 1.15583E5 9.186E3 9.7922E3/
+!REFITTED TO DEAN 2000 PLOG
+N2H3+M=H+N2H2+M    3.54E44 -7.92978 6.80611644E4
+!P. Di  vart, L. Catoire, Contributions of Experimental Data Obtained in Concentr
+H+N2H3=H2+N2H2    7.476E3 2.796 4.68E3
+!P. Di  vart, L. Catoire, Contributions of Experimental Data Obtained in Concentr
+H+N2H3=H2+H2NN    6.243E6 1.89 2.47E2
+!Dean AM Bozzelli JW (Gardiner WC) Gas Phase Combustion Chemistry, Springer 2000
+N2H3+O=N2H2+OH    1.7E8 1.5 -6.46E2
+!Dean AM Bozzelli JW (Gardiner WC) Gas Phase Combustion Chemistry, Springer 2000
+N2H3+OH=H2O+N2H2    1.2E6 2.0 -1.192E3
+!Dean AM Bozzelli JW (Gardiner WC) Gas Phase Combustion Chemistry, Springer 2000
+N2H3+OH=H2NN+H2O    3.0E13 0.0 0.0E0
+!x2 Dean AM Bozzelli JW (Gardiner WC) Gas Phase Combustion Chemistry, Springer 2000
+HO2+N2H3=H2O2+N2H2    2.8E4 2.69 -1.6E3
+!JIM MILLER ESTIMATED
+N2H3+NH=N2H2+NH2    2.0E13 0.0 0.0E0
+!P. Di  vart, L. Catoire, Contributions of Experimental Data Obtained in Concentrated Mixtures to Kinetic Studies: Application to Monomethylhydrazine Pyrolysis, The Jour
+N2H3+NH2=N2H2+NH3    6.08E-1 3.574 1.19E3
+!Dana 2019
+N2H3+NH2=H2NN+NH3    3.1E0 3.43 -1.95984704E3
+!A.A. Konnov, J. De Ruyck, Kinetic modeling of the decomposition and flames of hydrazine, Combustion and Flame 124 (2001) 106-126.
+H+N2H3=NH+NH3    1.0E11 0.0 0.0E0
+!Dean AM Bozzelli JW (Gardiner WC) Gas Phase Combustion Chemistry, Springer 2000
+N2H3+O=HNO+NH2    3.0E13 0.0 0.0E0
+!Dean AM Bozzelli JW (Gardiner WC) Gas Phase Combustion Chemistry, Springer 2000
+N2H3+O=>H+NH2+NO    3.0E13 0.0 0.0E0
+!JIM MILLER ESTIMATED
+N2H3+OH=HNO+NH3    1.0E12 0.0 1.5E4
+!Dean AM Bozzelli JW (Gardiner WC) Gas Phase Combustion Chemistry, Springer 2000
+HNOH+NH2=N2H3+OH    1.0E1 3.46 -4.67E2
+!\AUTHOR: AS !\REF: Dean AM Bozzelli JW (Gardiner WC) Gas Phase Combustion Chemistry, Springer 2000. !\COMMENT:
+H2NN=H+NNH    1.0E0 0.0 0.0E0
+    DUP
+    PLOG/1.0E-1 5.9E32 -6.99E0 5.17912E4/
+    PLOG/1.0E0 9.6E35 -7.57E0 5.48412E4/
+    PLOG/1.0E1 5.0E36 -7.43E0 5.72951E4/
+!\REF: Dean AM Bozzelli JW (Gardiner WC) Gas Phase Combustion Chemistry, Springer 2000. !\COMMENT:
+H2NN=H+NNH    1.0E0 0.0 0.0E0
+    DUP
+    PLOG/1.0E-1 7.2E28 -7.77E0 5.07579E4/
+    PLOG/1.0E0 3.2E31 -6.22E0 5.23177E4/
+    PLOG/1.0E1 5.1E33 -6.52E0 5.42153E4/
+!D.-Y. Hwang, A.M. Mebel, J. Phys. Chem. A 2003, 107, 2865-2874
+H2NN=H2+N2    2.5E14 0.0 5.2785E4
+! Reference: A. Dean, J. Bozzelli, Combustion Chemistry of Nitrogen,  (2000).
+N2H2=H2NN    1.0E0 0.0 0.0E0
+    PLOG/1.0E-1 9.2E38 -9.01E0 6.7727E4/
+    PLOG/1.0E0 2.0E41 -9.38E0 6.8452E4/
+    PLOG/1.0E1 1.3E45 -1.013E1 7.0757E4/
+!Dean AM Bozzelli JW (Gardiner WC) Gas Phase Combustion Chemistry, Springer 2000
+H+H2NN=H2+NNH    4.8E8 1.5 -8.94E2
+!Dean AM Bozzelli JW (Gardiner WC) Gas Phase Combustion Chemistry, Springer 2000
+H2NN+O=NNH+OH    3.3E8 1.5 -8.94E2
+!Dean AM Bozzelli JW (Gardiner WC) Gas Phase Combustion Chemistry, Springer 2000
+H2NN+OH=H2O+NNH    2.4E6 2.0 -1.192E3
+!Dean AM Bozzelli JW (Gardiner WC) Gas Phase Combustion Chemistry, Springer 2000
+H2NN+HO2=H2O2+NNH    2.9E4 2.69 -1.6E3
+!Dean AM Bozzelli JW (Gardiner WC) Gas Phase Combustion Chemistry, Springer 2000
+H2NN+NH2=NH3+NNH    1.8E6 1.94 -1.152E3
+!Dean AM Bozzelli JW (Gardiner WC) Gas Phase Combustion Chemistry, Springer 2000
+H+H2NN=H+N2H2    7.0E13 0.0 0.0E0
+!Dean AM Bozzelli JW (Gardiner WC) Gas Phase Combustion Chemistry, Springer 2000
+H2NN+O=NH2+NO    7.0E13 0.0 0.0E0
+!Dean AM Bozzelli JW (Gardiner WC) Gas Phase Combustion Chemistry, Springer 2000
+H2NN+OH=>H+NH2+NO    2.0E12 0.0 0.0E0
+!Dean AM Bozzelli JW (Gardiner WC) Gas Phase Combustion Chemistry, Springer 2000
+H2NN+O2=NH2+NO2    1.5E12 0.0 5.961E3
+!Dean AM Bozzelli JW (Gardiner WC) Gas Phase Combustion Chemistry, Springer 2000
+H2NN+HO2=>NH2+NO+OH    9.0E12 0.0 0.0E0
+! fit 1 _ 10 atm PLOG Dean AM Bozzelli JW (Gardiner WC) Gas Phase Combustion Chemistry, Springer 2000
+N2H2+M=H+NNH+M    1.41E43 -7.60359 7.4765531E4
+    H2O/7.0/
+! (Adjusted) Y. Li, S.M. Sarathy, Int. J. Hydrogen Energy 45 (2020) 23624-23637.
+H+N2H2=H2+NNH    4.34E8 1.76 2.74E3
+!Y. Li, S.M. Sarathy, Int. J. Hydrogen Energy 45 (2020) 23624-23637.
+N2H2+O=NNH+OH    1.11E8 1.62 8.04816E2
+! P. Raghunath, et al.,Chapter Seven - Ab Initio Chemical Kinetics of Key Proces
+N2H2+OH=H2O+NNH    6.74E3 2.8 -5.07E2
+!Dean AM Bozzelli JW (Gardiner WC) Gas Phase Combustion Chemistry, Springer 2000
+N2H2+NH=NH2+NNH    2.4E6 2.0 -1.192E3
+!P. Di  vart, L. Catoire, Contributions of Experimental Data Obtained in Concentrated Mixtures to Kinetic Studies: Application to Monomethylhydrazine Pyrolysis, The Jour
+N2H2+NH2=NH3+NNH    2.71E5 2.226 -1.03E3
+!Dean AM Bozzelli JW (Gardiner WC) Gas Phase Combustion Chemistry, Springer 2000
+N2H2+NO=N2O+NH2    4.0E12 0.0 1.1922E4
+!Dean AM Bozzelli JW (Gardiner WC) Gas Phase Combustion Chemistry, Springer 2000
+NNH=H+N2    3.0E8 0.0 0.0E0
+!S.J. Klippenstein et al. / Combustion and Flame 158 (2011) 774   789
+NNH+O=N2+OH    1.2E13 0.145 -2.17E2
+!S.J. Klippenstein et al. / Combustion and Flame 158 (2011) 774   789
+NNH+O2=HO2+N2    5.6E14 -0.385 -1.3E1
+!ESTIMATED BY Dean AM Bozzelli JW (Gardiner WC) Gas Phase Combustion Chemistry, Springer 2000
+HO2+NNH=H2O2+N2    1.4E4 2.69 -1.599535E3
+!JIM MILLER ESTIMATED // J.A. Miller, C.T. Bowman, Mechanism and modeling of nitrogen chemistry in combustion, Progress in Energy and Combustion Science 15 (1989) 287-33
+NH+NNH=N2+NH2    5.0E13 0.0 0.0E0
+!JIM MILLER ESTIMATED // J.A. Miller, C.T. Bowman, Mechanism and modeling of nitrogen chemistry in combustion, Progress in Energy and Combustion Science 15 (1989) 287-33
+H+NNH=H2+N2    1.0E14 0.0 0.0E0
+!JIM MILLER ESTIMATED // J.A. Miller, C.T. Bowman, Mechanism and modeling of nitrogen chemistry in combustion, Progress in Energy and Combustion Science 15 (1989) 287-33
+NNH+OH=H2O+N2    5.0E13 0.0 0.0E0
+!JIM MILLER ESTIMATED // J.A. Miller, C.T. Bowman, Mechanism and modeling of nitrogen chemistry in combustion, Progress in Energy and Combustion Science 15 (1989) 287-33
+NNH+NO=HNO+N2    5.0E13 0.0 0.0E0
+!JIM MILLER ESTIMATED // J.A. Miller, C.T. Bowman, Mechanism and modeling of nitrogen chemistry in combustion, Progress in Energy and Combustion Science 15 (1989) 287-33
+NH2+NNH=N2+NH3    5.0E13 0.0 0.0E0
+!+50%; S.J. Klippenstein et al. / Combustion and Flame 158 (2011) 774   789
+NNH+O=NH+NO    7.8E11 0.381 -4.09E2
+!S.J. Klippenstein et al. / Combustion and Flame 158 (2011) 774   789
+NNH+O=H+N2O    1.9E14 -0.274 -2.2E1
+!\AUTHOR: YJZ !\REF:COHEN 91
+N+O+M=NO+M    7.6E14 -0.1 -1.77E3
+    H2O/16.25/
+!\AUTHOR: YJZ !\REF:Baulch et al., J.Phys. Chem. Ref. Data, 2005, 34: 757-1397 !\COMMENT:
+HO2+NO=NO2+OH    2.1E12 0.0 -4.97E2
+!\Author: YJZ !\Ref: TSANG AND HERRON, JPCRD, 1991,20(4) !\Comment: WARNING
+NO+O(+M)=NO2(+M)    1.3E15 -0.75 0.0E0
+    AR/0.6/
+    CO2/6.0/
+    H2O/10.0/
+    N2O/4.4/
+    NO/1.8/
+    NO2/6.2/
+    O2/0.8/
+    LOW/9.44E24 -2.87E0 1.551E3/
+    TROE/9.62E-1 1.0E1 7.962E3/
+!\AUTHOR: pw !\REF: Chen et al., Reaction Chemistry and Engineering,2019,4,323-333 !\COMMENT: 1.15A_+2.0000000E+011
+H+NO2=NO+OH    2.3E11 0.84 -1.058E3
+!\AUTHOR: SC !\REF: Li et al., Phys. Chem. Chem. Phys., 2021, 23, 585-596 !\COMMENT: big effect on CO 2A
+NO2+O=NO+O2    5.18E15 -1.035 5.39914E1
+    DUP
+NO2+O=NO+O2    8.48E16 -0.861 1.2164071E4
+    DUP
+! ! Becker E Rahman MM Schindler RN BBPC 96:776 1992
+H+NO3=NO2+OH    6.0E13 0.0 0.0E0
+! ! Dean AM Bozzelli JW (Gardiner WC) Gas Phase Combustion Chemistry, Springer 2000
+HNO2+O=NO2+OH    1.7E8 1.5 2.0E3
+! ! Park J Giles ND Moore J Lin MC JPCA 102:10099 1998
+2NO2=2NO+O2    4.5E12 0.0 2.7599E4
+! Tsang W JPCRD 20:221 1991
+2NO2=NO+NO3    9.6E9 0.73 2.09E4
+! ! Atkinson R Baulch DL Cox RA Hampson RF Kerr JA Troe J JPC \Ref Data 1992, 21, 11251568.
+NO3+OH=HO2+NO2    1.4E13 0.0 0.0E0
+!\AUTHOR: pw !\REF:JIAJUE CHAI AND F. GOLDSMITH. PCI, 2016 !\COMMENT: sum of cis- and trans-HONO
+H2+NO2=H+HONO    1.155E0 3.886 2.598E4
+!\AUTHOR: !\REF:
+H+HNO2=H2+NO2    2.33E4 2.77 -2.0219E3
+! ! CL Rasmussen J Hansen P Marshall P Glarborg IJCK 40, 454-480 (2008)
+HO2+NO2=HONO+O2    1.9E0 3.32 3.044E3
+! ! CL Rasmussen J Hansen P Marshall P Glarborg IJCK 40, 454-480 (2008)
+HO2+NO2=HNO2+O2    1.9E1 3.26 4.983E3
+! ! Hahn J Luther K Troe J PCCP 2:5098 2000
+NO2+O(+M)=NO3(+M)    3.5E12 0.24 0.0E0
+    LOW/2.5E20 -1.5E0 0.0E0/
+    TROE/7.1E-1 1.0E-30 1.7E3 1.0E30/
+! ! Atkinson R Baulch DL Cox RA Hampson RF Kerr JA Troe J JPC \Ref Data 1992, 21, 11251568.
+NO3+O=NO2+O2    1.0E13 0.0 0.0E0
+! ! Becker E Rahman MM Schindler RN BBPC 96:776 1992
+HO2+NO3=NO2+O2+OH    1.5E12 0.0 0.0E0
+! ! DeMore WB Sander SP Golden DM Molina MJ Hampson RF Kurylo MJ Howard CJ Ravishankara AR JPL P 90-1:1 1990
+NO3+NO2=NO+O2+NO2    5.0E10 0.0 2.94E3
+!\Author: YJZ !\Ref: KLIPPENSTEIN ET AL., CNF, 2011, 158 !\Comment: WARNING
+!LOW-PRESSURE-LIMIT!\AUTHOR: SC !\REF: Mulvihill et al., CNF,2020,224,6-13 !\COMMENT: T range: 820-2500
+N2O(+M)=N2+O(+M)    1.69E11 0.0 5.7653E4
+    H2O/12.0/
+    N2/1.7/
+    N2O/3.5/
+    NO/3.0/
+    O2/1.4/
+    LOW/1.04E15 0.0E0 5.981E4/
+! Marshall, P., Ko, T., _ Fontijn, A. (1989). The Journal of Physical Chemistry, 93(5), 1922-1927.
+H+N2O=N2+OH    6.7E10 0.0 5.39E3
+    DUP
+! Marshall, P., Ko, T., _ Fontijn, A. (1989). The Journal of Physical Chemistry, 93(5), 1922-1927.
+H+N2O=N2+OH    4.4E14 0.0 1.89E4
+    DUP
+!\Author: YJZ !\Ref: MEBEL ET AL., IJCK, 1996, 28(9) !\Comment: WARNING
+N2O+O=2NO    1.748E16 -0.557 2.805E4
+!\Author: YJZ !\Ref: MEBEL ET AL., IJCK, 1996, 28(9) !\Comment: WARNING
+N2O+O=N2+O2    3.69E12 0.0 1.5936E4
+!\Author: YJZ !\Ref: MEBEL ET AL., IJCK, 1996, 28(9) !\Comment: WARNING
+N2O+OH=HO2+N2    1.3E-2 4.72 3.656E4
+!\Author: YJZ !\Ref: MEBEL ET AL., IJCK, 1996, 28(9) !\Comment: WARNING
+N2O+OH=HNO+NO    1.2E-4 4.33 2.508E4
+!\Author: YJZ !\Ref: MEBEL ET AL., IJCK, 1996, 28(9) !\Comment: WARNING
+N2O+NO=N2+NO2    5.3E5 2.23 4.6281E4
+!Stagni et al., React. Chem. Eng., 2020, 5, 696
+HNO=H+NO    1.0E0 0.0 0.0E0
+    PLOG/1.0E-1 2.0121E19 -3.021E0 4.7792E4/
+    PLOG/1.0E0 1.8259E20 -3.008E0 4.788E4/
+    PLOG/1.0E1 1.2762E21 -2.959E0 4.81E4/
+    PLOG/1.0E2 5.6445E21 -2.855E0 4.8459E4/
+    PLOG/1.0E3 9.7111E21 -2.642E0 4.894E4/
+! Klippenstein, S. J., Mulvihill, C. R., _ Glarborg, P. (2023). Theoretical Kinetics Predictions for Reactions on the NH2O Potential Energy Surface. The Journal of Physi
+H+HNO=H2+NO    1.66E10 1.18 -4.46E2
+!S. Xu, M.C. Lin, Int J Chem Kinet 41: 667   677, 2009
+NH3+NO=HNO+NH2    1.458295E3 3.12 5.44933078E4
+!Inomata S Washida N JPCA 103:5023-5031 1999
+HNO+O=NO+OH    2.3E13 0.0 0.0E0
+!MT Nguyen S Zhang J Peeters TN TRuong MT Nguyen Chem Phys Lett 2004 388 94-99
+HNO+OH=H2O+NO    1.2E9 1.189 3.34E2
+    DUP
+!\AUTHOR: AS !\REF: Chen, X., Fuller, M. E., _ Goldsmith, C. F. Reac Chem Eng, 4(2), 323-333 (2019). !\COMMENT:
+HNO+OH=H2O+NO    1.0E0 0.0 0.0E0
+    DUP
+    PLOG/1.0E-2 5.82E10 4.0E-1 3.762E3/
+    PLOG/1.0E-1 5.85E10 4.0E-1 3.763E3/
+    PLOG/3.16E-1 5.92E10 4.0E-1 3.764E3/
+    PLOG/1.0E0 6.3E10 3.9E-1 3.782E3/
+    PLOG/3.16E0 9.53E10 3.4E-1 3.931E3/
+    PLOG/1.0E1 2.6E11 2.3E-1 4.413E3/
+    PLOG/3.16E1 3.83E11 2.0E-1 5.099E3/
+    PLOG/1.0E2 4.18E10 5.1E-1 5.532E3/
+!\AUTHOR: AS !\REF: Dean AM Bozzelli JW (Gardiner WC) Gas Phase Combustion Chemistry, Springer 2000. !\COMMENT:
+HNO+O2=HO2+NO    2.0E13 0.0 1.4E4
+!Mebel AM Lin MC Morokuma K IJCK 30:729-736 1998
+HNO+NO2=HONO+NO    4.4E4 2.6 4.04E3
+!\AUTHOR: AS !\REF: Chen, X., Fuller, M. E., _ Goldsmith, C. F. Reac Chem Eng, 4(2), 323-333 (2019). !\COMMENT:
+HNO+OH=H+HONO    1.0E0 0.0 0.0E0
+    PLOG/1.0E-2 1.06E3 2.76E0 4.439E3/
+    PLOG/1.0E-1 1.09E3 2.75E0 4.45E3/
+    PLOG/3.16E-1 1.18E3 2.74E0 4.476E3/
+    PLOG/1.0E0 1.48E3 2.72E0 4.554E3/
+    PLOG/3.16E0 2.71E3 2.64E0 4.768E3/
+    PLOG/1.0E1 9.67E3 2.49E0 5.253E3/
+    PLOG/3.16E1 5.31E4 2.29E0 6.063E3/
+    PLOG/1.0E2 1.03E5 2.24E0 6.951E3/
+! NBS91 Tsang W JPCRD 20:221 1991
+2HNO=H2O+N2O    9.0E8 0.0 3.1E3
+!O. Mathieu, E.L. Petersen / Combustion and Flame 162 (2015) 554   570
+HON+M=H+NO+M    5.1E19 -1.73 1.604E4
+!O. Mathieu, E.L. Petersen / Combustion and Flame 162 (2015) 554   570
+HON+O=NO+OH    7.0E13 0.0 0.0E0
+!O. Mathieu, E.L. Petersen / Combustion and Flame 162 (2015) 554   570
+H+HON=H+HNO    2.4E13 0.0 0.0E0
+!O. Mathieu, E.L. Petersen / Combustion and Flame 162 (2015) 554   570
+HON+OH=H+HONO    4.0E13 0.0 0.0E0
+!O. Mathieu, E.L. Petersen / Combustion and Flame 162 (2015) 554   570
+HON+O2=NO2+OH    1.0E12 0.0 4.968E3
+!Dean AM Bozzelli JW (Gardiner WC) Gas Phase Combustion Chemistry, Springer 2000
+H2NO+M=H+HNO+M    2.8E24 -2.83 6.4915E4
+    H2O/10.0/
+!Dean AM Bozzelli JW (Gardiner WC) Gas Phase Combustion Chemistry, Springer 2000
+H2NO+M=HNOH+M    1.1E29 -4.0 4.4E4
+    H2O/10.0/
+!Dean AM Bozzelli JW (Gardiner WC) Gas Phase Combustion Chemistry, Springer 2000
+H+H2NO=H2+HNO    4.8E8 1.5 1.5598E3
+!Dean AM Bozzelli JW (Gardiner WC) Gas Phase Combustion Chemistry, Springer 2000
+H2NO+O=HNO+OH    3.3E8 1.5 4.868E2
+!Dean AM Bozzelli JW (Gardiner WC) Gas Phase Combustion Chemistry, Springer 2000
+H2NO+OH=H2O+HNO    2.4E6 2.0 1.1922E3
+!Stagni _ Cavallotti 2022 PCI
+H2NO+O2=HNO+HO2    1.73E5 2.19 1.8E4
+!x2 Stagni _ Cavallotti 2022 PCI
+H2NO+HO2=H2O2+HNO    1.082E5 2.16 -3.597E3
+!x0.5 Stagni _ Cavallotti 2022 PCI
+H2NO+NO2=HNO+HONO    3.0E11 0.0 2.0E3
+!x0.5 Stagni _ Cavallotti 2022 PCI
+H2NO+NH2=HNO+NH3    9.0E5 1.94 -5.8E2
+!JIM MILLER ESTIMATED, USED BY P. Glarborg, J.A. Miller, B. Ruscic, S.J. Klippenstein, Prog. Energy Combust. Sci. 67 (2018) 31-68.
+H2NO+NO=2HNO    2.0E4 2.0 1.3E4
+!Dean AM Bozzelli JW (Gardiner WC) Gas Phase Combustion Chemistry, Springer 2000
+HNOH+M=H+HNO+M    2.0E24 -2.84 5.90139E4
+    H2O/10.0/
+!Dean AM Bozzelli JW (Gardiner WC) Gas Phase Combustion Chemistry, Springer 2000
+H+HNOH=H2+HNO    4.8E8 1.5 3.7753E2
+!Dean AM Bozzelli JW (Gardiner WC) Gas Phase Combustion Chemistry, Springer 2000
+HNOH+O=HNO+OH    7.0E13 0.0 0.0E0
+    DUP
+!Dean AM Bozzelli JW (Gardiner WC) Gas Phase Combustion Chemistry, Springer 2000
+HNOH+O=HNO+OH    3.3E8 1.5 -3.5766E2
+    DUP
+!Dean AM Bozzelli JW (Gardiner WC) Gas Phase Combustion Chemistry, Springer 2000
+HNOH+OH=H2O+HNO    2.4E6 2.0 -1.1922E3
+!JIM MILLER ESTIMATED, USED BY S.J. Klippenstein et al. / Combustion and Flame 158 (2011) 774   789
+HNOH+O2=HNO+HO2    3.0E12 0.0 2.5E4
+!Dean AM Bozzelli JW (Gardiner WC) Gas Phase Combustion Chemistry, Springer 2000
+HNOH+HO2=H2O2+HNO    2.9E4 2.69 -1.599535E3
+!Dean AM Bozzelli JW (Gardiner WC) Gas Phase Combustion Chemistry, Springer 2000
+HNOH+NH2=HNO+NH3    1.8E6 1.94 -1.15246E3
+!JIM MILLER ESTIMATED, USED BY S.J. Klippenstein et al. / Combustion and Flame 158 (2011) 774   789
+HNOH+NO2=HNO+HONO    6.0E11 0.0 2.0E3
+!Dean AM Bozzelli JW (Gardiner WC) Gas Phase Combustion Chemistry, Springer 2000
+HNOH+NH2=H2NN+H2O    4.6E19 -1.94 1.92739E3
+!\AUTHOR: pw !\REF: Chen et al., Reaction Chemistry and Engineering,2019,4,323-333 !\COMMENT:
+NO+OH=HONO    1.0E0 0.0 0.0E0
+    PLOG/1.0E-2 5.02E21 -4.24E0 8.989E2/
+    PLOG/1.0E-1 5.31E22 -4.24E0 1.184E3/
+    PLOG/3.16E-1 1.38E23 -4.22E0 1.376E3/
+    PLOG/1.0E0 3.09E23 -4.17E0 1.621E3/
+    PLOG/3.16E0 5.45E23 -4.09E0 1.911E3/
+    PLOG/1.0E1 6.35E23 -3.97E0 2.222E3/
+    PLOG/3.16E1 3.68E23 -3.75E0 2.501E3/
+    PLOG/1.0E2 7.29E22 -3.41E0 2.66E3/
+! ! NBS91      Tsang W JPCRD 20:221 1991
+HONO+O=NO2+OH    1.2E13 0.0 5.96E3
+! ! Burkholder JB Mellouki A Talukdar R Ravishankara AR IJCK 24:711 1992
+HONO+OH=H2O+NO2    1.7E12 0.0 -5.2E2
+! ! Park J Giles ND Moore J Lin MC JPCA 102:10099 1998
+HONO+NO2=HONO2+NO    2.0E11 0.0 3.27E4
+!  Mebel AM Lin MC Melius CF JPCA 102:1803 1998
+2HONO=H2O+NO+NO2    3.5E-1 3.64 1.214E4
+!\AUTHOR: AS !\REF: Chen, X., Fuller, M. E., _ Goldsmith, C. F. Reac Chem Eng, 4(2), 323-333 (2019). !\COMMENT:
+H+HONO=H2O+NO    1.0E0 0.0 0.0E0
+    PLOG/1.0E-2 3.91E9 9.9E-1 4.049E3/
+    PLOG/1.0E-1 3.93E9 9.9E-1 4.049E3/
+    PLOG/3.16E-1 3.97E9 9.9E-1 4.051E3/
+    PLOG/1.0E0 4.3E9 9.8E-1 4.07E3/
+    PLOG/3.16E0 7.04E9 9.2E-1 4.225E3/
+    PLOG/1.0E1 2.6E10 7.6E-1 4.736E3/
+    PLOG/3.16E1 7.91E10 6.4E-1 5.519E3/
+    PLOG/1.0E2 2.79E10 8.0E-1 6.146E3/
+!\AUTHOR: AS !\REF: Chen, X., Fuller, M. E., _ Goldsmith, C. F. Reac Chem Eng, 4(2), 323-333 (2019). !\COMMENT:
+NO+OH=HNO2    1.0E0 0.0 0.0E0
+    PLOG/1.0E-2 3.16E18 -3.74E0 1.405E3/
+    PLOG/1.0E-1 3.03E18 -3.43E0 2.618E3/
+    PLOG/3.16E-1 2.23E18 -3.24E0 3.248E3/
+    PLOG/1.0E0 1.43E18 -3.03E0 3.899E3/
+    PLOG/3.16E0 6.91E17 -2.79E0 4.535E3/
+    PLOG/1.0E1 2.04E17 -2.49E0 5.125E3/
+    PLOG/3.16E1 3.07E16 -2.12E0 5.648E3/
+    PLOG/1.0E2 1.95E15 -1.64E0 6.099E3/
+!\AUTHOR: AS !\REF: Chen, X., Fuller, M. E., _ Goldsmith, C. F. Reac Chem Eng, 4(2), 323-333 (2019). !\COMMENT:
+HNO2=HONO    1.0E0 0.0 0.0E0
+    PLOG/1.0E-2 3.26E34 -7.97E0 4.549E4/
+    PLOG/1.0E-1 2.77E33 -7.58E0 4.525E4/
+    PLOG/3.16E-1 1.93E32 -7.18E0 4.494E4/
+    PLOG/1.0E0 1.56E30 -6.47E0 4.436E4/
+    PLOG/3.16E0 2.17E27 -5.49E0 4.367E4/
+    PLOG/1.0E1 4.68E24 -4.52E0 4.332E4/
+    PLOG/3.16E1 1.14E23 -3.81E0 4.364E4/
+    PLOG/1.0E2 2.03E22 -3.35E0 4.443E4/
+HNO2+OH=H2O+NO2    1.2E6 2.0 -7.9487E2
+!\AUTHOR: AS !\REF: Chen, X., Fuller, M. E., _ Goldsmith, C. F. Reac Chem Eng, 4(2), 323-333 (2019). !\COMMENT:
+H+HNO2=H2O+NO    1.0E0 0.0 0.0E0
+    PLOG/1.0E-2 3.39E9 1.07E0 5.568E3/
+    PLOG/1.0E-1 3.39E9 1.07E0 5.567E3/
+    PLOG/3.16E-1 3.39E9 1.07E0 5.567E3/
+    PLOG/1.0E0 3.38E9 1.07E0 5.565E3/
+    PLOG/3.16E0 3.38E9 1.07E0 5.56E3/
+    PLOG/1.0E1 3.4E9 1.07E0 5.546E3/
+    PLOG/3.16E1 4.32E9 1.04E0 5.591E3/
+    PLOG/1.0E2 1.27E10 9.1E-1 5.968E3/
+!\AUTHOR: AS !\REF: Chen, X., Fuller, M. E., _ Goldsmith, C. F. Reac Chem Eng, 4(2), 323-333 (2019). !\COMMENT:
+H+HNO2=HNO+OH    1.0E0 0.0 0.0E0
+    PLOG/1.0E-2 3.61E7 1.78E0 5.565E3/
+    PLOG/1.0E-1 3.61E7 1.78E0 5.566E3/
+    PLOG/3.16E-1 3.62E7 1.78E0 5.567E3/
+    PLOG/1.0E0 3.65E7 1.78E0 5.57E3/
+    PLOG/3.16E0 3.74E7 1.77E0 5.58E3/
+    PLOG/1.0E1 4.14E7 1.76E0 5.617E3/
+    PLOG/3.16E1 6.23E7 1.71E0 5.77E3/
+    PLOG/1.0E2 1.81E8 1.59E0 6.233E3/
+!\Author: YJZ !\Ref: TROE, JPCA, 2012, 116(24) !\Comment: WARNING
+NO2+OH(+M)=HONO2(+M)    1.63E13 0.0 0.0E0
+    LOW/3.13E25 -3.0E0 0.0E0/
+    TROE/4.1E-1 1.0E-30 1.0E30 1.0E30/
+! ! Boughton JW Kristyan S Lin MC Chem. Phys 214:219 1997
+H+HONO2=H2+NO3    5.6E8 1.5 1.64E4
+! ! Boughton JW Kristyan S Lin MC Chem. Phys 214:219 1997
+H+HONO2=H2O+NO2    6.1E1 3.3 6.285E3
+! ! Boughton JW Kristyan S Lin MC Chem. Phys 214:219 1997
+H+HONO2=HONO+OH    3.8E5 2.3 6.976E3
+! ! Lamb JJ Mozurkewich M Benson SW JPC 88:6441-6448 1984
+HONO2+OH=H2O+NO3    1.0E10 0.0 -1.24E3
+!SJ Klippenstein LB Harding B Ruscic R Sivaramakrishnan NK Srinivasan M-C Su JV Michael JPCA 113 (2009) 10241-10259.
+NH2OH(+M)=NH2+OH(+M)    1.4E20 -1.31 6.408E4
+    LOW/5.4E37 -5.96E0 6.6783E4/
+    TROE/3.1E-1 1.0E-30 1.0E30 1.0E30/
+!Dean AM Bozzelli JW (Gardiner WC) Gas Phase Combustion Chemistry, Springer 2000
+H+NH2OH=H2+HNOH    4.8E8 1.5 6.249E3
+!Dean AM Bozzelli JW (Gardiner WC) Gas Phase Combustion Chemistry, Springer 2000
+H+NH2OH=H2+H2NO    2.4E8 1.5 5.067E3
+!Dean AM Bozzelli JW (Gardiner WC) Gas Phase Combustion Chemistry, Springer 2000
+NH2OH+O=HNOH+OH    3.3E8 1.5 3.865E3
+!Dean AM Bozzelli JW (Gardiner WC) Gas Phase Combustion Chemistry, Springer 2000
+NH2OH+O=H2NO+OH    1.7E8 1.5 3.01E3
+!SJ Klippenstein LB Harding B Ruscic R Sivaramakrishnan NK Srinivasan M-C Su JV Michael JPCA 113 (2009) 10241-10259.
+NH2OH+OH=H2O+HNOH    1.5E4 2.61 -3.537E3
+!SJ Klippenstein LB Harding B Ruscic R Sivaramakrishnan NK Srinivasan M-C Su JV Michael JPCA 113 (2009) 10241-10259.
+NH2OH+OH=H2NO+H2O    1.5E5 2.28 -1.296E3
+!Dean AM Bozzelli JW (Gardiner WC) Gas Phase Combustion Chemistry, Springer 2000
+HO2+NH2OH=H2O2+HNOH    2.9E4 2.69 9.557E3
+!Dean AM Bozzelli JW (Gardiner WC) Gas Phase Combustion Chemistry, Springer 2000
+HO2+NH2OH=H2NO+H2O2    1.4E4 2.69 6.418E3
+!SJ Klippenstein LB Harding B Ruscic R Sivaramakrishnan NK Srinivasan M-C Su JV Michael JPCA 113 (2009) 10241-10259.
+NH2+NH2OH=HNOH+NH3    1.1E-1 4.0 -9.7E1
+!SJ Klippenstein LB Harding B Ruscic R Sivaramakrishnan NK Srinivasan M-C Su JV Michael JPCA 113 (2009) 10241-10259.
+NH2+NH2OH=H2NO+NH3    9.5E0 3.42 -1.013E3
+!SJ Klippenstein LB Harding B Ruscic R Sivaramakrishnan NK Srinivasan M-C Su JV Michael JPCA 113 (2009) 10241-10259.
+NH+NH2OH=HNOH+NH2    2.9E-3 4.4 1.564E3
+!SJ Klippenstein LB Harding B Ruscic R Sivaramakrishnan NK Srinivasan M-C Su JV Michael JPCA 113 (2009) 10241-10259.
+NH+NH2OH=H2NO+NH2    1.5E-3 4.6 2.424E3
+!Meng, Q., Lei, L., Lee, J., _ Burke, M. P. (2023). On the role of HNNO in NOx formation. Proceedings of the Combustion Institute.
+H2NNO2=T-HNN(O)OH    1.0E0 0.0 0.0E0
+    PLOG/1.0E-3 3.242E18 -3.52E0 2.8786E4/
+    PLOG/1.0E-2 1.008E20 -3.65E0 3.0532E4/
+    PLOG/1.0E-1 2.677E21 -3.76E0 3.2244E4/
+    PLOG/1.0E0 2.497E22 -3.76E0 3.3753E4/
+    PLOG/1.0E1 2.413E22 -3.51E0 3.4795E4/
+    PLOG/1.0E2 2.219E20 -2.69E0 3.4892E4/
+    PLOG/1.0E3 1.787E16 -1.3E0 3.4079E4/
+!Meng, Q., Lei, L., Lee, J., _ Burke, M. P. (2023). On the role of HNNO in NOx formation. Proceedings of the Combustion Institute.
+H2NNO2=C-HNN(O)OH    1.0E0 0.0 0.0E0
+    PLOG/1.0E-3 2.288E36 -9.13E0 6.6578E4/
+    PLOG/1.0E-2 3.496E35 -8.37E0 6.5002E4/
+    PLOG/1.0E-1 2.037E29 -6.14E0 5.8651E4/
+    PLOG/1.0E0 6.453E30 -6.23E0 5.2575E4/
+    PLOG/1.0E1 1.645E39 -8.22E0 5.3562E4/
+    PLOG/1.0E2 1.979E42 -8.79E0 5.5587E4/
+    PLOG/1.0E3 8.608E39 -7.88E0 5.6643E4/
+!Meng, Q., Lei, L., Lee, J., _ Burke, M. P. (2023). On the role of HNNO in NOx formation. Proceedings of the Combustion Institute.
+H2NNO2=NH2+NO2    1.0E0 0.0 0.0E0
+    PLOG/1.0E-3 4.21E44 -1.07E1 5.855E4/
+    PLOG/1.0E-2 1.335E40 -9.02E0 5.6689E4/
+    PLOG/1.0E-1 1.515E38 -8.12E0 5.5242E4/
+    PLOG/1.0E0 2.378E39 -8.13E0 5.532E4/
+    PLOG/1.0E1 1.64E40 -8.03E0 5.616E4/
+    PLOG/1.0E2 2.644E39 -7.5E0 5.6753E4/
+    PLOG/1.0E3 2.733E36 -6.38E0 5.6495E4/
+!Meng, Q., Lei, L., Lee, J., _ Burke, M. P. (2023). On the role of HNNO in NOx formation. Proceedings of the Combustion Institute.
+H2NNO2=H2O+N2O    1.0E0 0.0 0.0E0
+    PLOG/1.0E-3 2.524E52 -1.3E1 5.9052E4/
+    PLOG/1.0E-2 3.303E44 -1.02E1 5.5899E4/
+    PLOG/1.0E-1 2.507E42 -9.29E0 5.4889E4/
+    PLOG/1.0E0 2.492E42 -9.02E0 5.4947E4/
+    PLOG/1.0E1 5.293E42 -8.9E0 5.5538E4/
+    PLOG/1.0E2 6.597E41 -8.46E0 5.7105E4/
+    PLOG/1.0E3 8.963E36 -6.91E0 5.8327E4/
+!Meng, Q., Lei, L., Lee, J., _ Burke, M. P. (2023). On the role of HNNO in NOx formation. Proceedings of the Combustion Institute.
+T-HNN(O)OH=C-HNN(O)OH    1.0E0 0.0 0.0E0
+    PLOG/1.0E-1 8.94E23 -5.07E0 4.6582E4/
+    PLOG/1.0E0 1.906E28 -5.74E0 4.2884E4/
+    PLOG/1.0E1 1.083E35 -7.13E0 4.3183E4/
+    PLOG/1.0E2 9.922E38 -7.81E0 4.4574E4/
+    PLOG/1.0E3 1.194E39 -7.51E0 4.5497E4/
+!Meng, Q., Lei, L., Lee, J., _ Burke, M. P. (2023). On the role of HNNO in NOx formation. Proceedings of the Combustion Institute.
+T-HNN(O)OH=NH2+NO2    1.0E0 0.0 0.0E0
+    PLOG/1.0E-3 3.211E20 -3.51E0 4.2071E4/
+    PLOG/1.0E-2 3.591E23 -4.18E0 4.2448E4/
+    PLOG/1.0E-1 2.675E27 -5.07E0 4.2954E4/
+    PLOG/1.0E0 6.161E31 -6.04E0 4.405E4/
+    PLOG/1.0E1 6.677E34 -6.63E0 4.5595E4/
+    PLOG/1.0E2 2.001E35 -6.5E0 4.7205E4/
+    PLOG/1.0E3 1.926E32 -5.39E0 4.815E4/
+!Meng, Q., Lei, L., Lee, J., _ Burke, M. P. (2023). On the role of HNNO in NOx formation. Proceedings of the Combustion Institute.
+T-HNN(O)OH=H2O+N2O    1.0E0 0.0 0.0E0
+    PLOG/1.0E-3 6.75E24 -4.71E0 4.1139E4/
+    PLOG/1.0E-2 7.815E27 -5.37E0 4.1637E4/
+    PLOG/1.0E-1 3.192E31 -6.19E0 4.2547E4/
+    PLOG/1.0E0 1.741E34 -6.76E0 4.3473E4/
+    PLOG/1.0E1 3.153E35 -6.89E0 4.4063E4/
+    PLOG/1.0E2 1.679E36 -6.84E0 4.5112E4/
+    PLOG/1.0E3 4.036E33 -5.87E0 4.6034E4/
+!Meng, Q., Lei, L., Lee, J., _ Burke, M. P. (2023). On the role of HNNO in NOx formation. Proceedings of the Combustion Institute.
+C-HNN(O)OH=NH2+NO2    1.0E0 0.0 0.0E0
+    PLOG/1.0E-3 1.081E4 4.5E-1 4.4733E4/
+    PLOG/1.0E-2 2.658E16 -2.58E0 5.2345E4/
+    PLOG/1.0E-1 5.459E18 -2.95E0 4.7164E4/
+    PLOG/1.0E0 3.536E25 -4.54E0 4.3719E4/
+    PLOG/1.0E1 9.509E32 -6.25E0 4.5143E4/
+    PLOG/1.0E2 1.327E36 -6.82E0 4.8109E4/
+    PLOG/1.0E3 3.21E34 -6.1E0 5.0687E4/
+!Meng, Q., Lei, L., Lee, J., _ Burke, M. P. (2023). On the role of HNNO in NOx formation. Proceedings of the Combustion Institute.
+C-HNN(O)OH=H2O+N2O    1.0E0 0.0 0.0E0
+    PLOG/1.0E-3 1.147E16 -2.67E0 2.111E4/
+    PLOG/1.0E-2 5.13E17 -2.84E0 2.2915E4/
+    PLOG/1.0E-1 1.12E19 -2.92E0 2.4613E4/
+    PLOG/1.0E0 6.844E19 -2.86E0 2.6087E4/
+    PLOG/1.0E1 4.649E19 -2.54E0 2.709E4/
+    PLOG/1.0E2 3.002E17 -1.68E0 2.7163E4/
+    PLOG/1.0E3 1.182E14 -4.9E-1 2.6625E4/
+!Meng, Q., Lei, L., Lee, J., _ Burke, M. P. (2023). On the role of HNNO in NOx formation. Proceedings of the Combustion Institute.
+H+N2O(+M)=T-ONNH(+M)    1.7E4 3.05 6.53E3
+    H2/3.0/
+    H2O/21.0/
+    N2/1.5/
+    O2/1.1/
+    LOW/1.27E27 -3.48E0 7.03E3/
+    TROE/1.2E-1 1.0E-30 1.0E30/
+!Meng, Q., Lei, L., Lee, J., _ Burke, M. P. (2023). On the role of HNNO in NOx formation. Proceedings of the Combustion Institute.
+H+N2O(+M)=C-ONNH(+M)    2.37E-2 4.81 4.79E3
+    H2/3.0/
+    H2O/21.0/
+    N2/1.5/
+    O2/1.1/
+    LOW/1.23E25 -2.94E0 6.77E3/
+    TROE/1.0E-1 1.0E-30 1.0E30/
+!Meng, Q., Lei, L., Lee, J., _ Burke, M. P. (2023). On the role of HNNO in NOx formation. Proceedings of the Combustion Institute.
+H+N2O(+M)=ONHN(+M)    5.91E-17 9.29 1.19E4
+    H2/3.0/
+    H2O/21.0/
+    N2/1.5/
+    O2/1.1/
+    LOW/4.8E20 -1.93E0 1.44E4/
+    TROE/7.5E-2 1.0E-30 1.0E30/
+!Meng, Q., Lei, L., Lee, J., _ Burke, M. P. (2023). On the role of HNNO in NOx formation. Proceedings of the Combustion Institute.
+T-ONNH(+M)=C-ONNH(+M)    1.34E7 3.36 2.3E4
+    H2/3.0/
+    H2O/21.0/
+    N2/1.5/
+    O2/1.1/
+    LOW/1.03E20 -8.01E-1 1.69E4/
+    TROE/7.4E-2 1.0E-30 1.0E30/
+!Meng, Q., Lei, L., Lee, J., _ Burke, M. P. (2023). On the role of HNNO in NOx formation. Proceedings of the Combustion Institute.
+T-ONNH=N2+OH    1.0E0 0.0 0.0E0
+    PLOG/1.0E-3 5.492E20 -4.92E0 2.7957E4/
+    PLOG/1.0E-2 7.191E19 -4.47E0 2.829E4/
+    PLOG/1.0E-1 1.366E17 -3.44E0 2.8122E4/
+    PLOG/1.0E0 1.87E14 -2.27E0 2.83E4/
+    PLOG/1.0E1 1.168E14 -1.76E0 3.0057E4/
+    PLOG/1.0E2 6.529E16 -2.06E0 3.3255E4/
+    PLOG/1.0E3 1.177E18 -2.0E0 3.5804E4/
+!Meng, Q., Lei, L., Lee, J., _ Burke, M. P. (2023). On the role of HNNO in NOx formation. Proceedings of the Combustion Institute.
+C-ONNH=N2+OH    1.0E0 0.0 0.0E0
+    PLOG/1.0E-3 2.724E7 -9.6E-1 1.741E4/
+    PLOG/1.0E-2 1.32E7 -7.1E-1 1.7789E4/
+    PLOG/1.0E-1 2.651E5 -1.0E-2 1.7748E4/
+    PLOG/1.0E0 1.035E3 1.0E0 1.783E4/
+    PLOG/1.0E1 4.688E2 1.52E0 1.9263E4/
+    PLOG/1.0E2 9.612E4 1.32E0 2.1935E4/
+    PLOG/1.0E3 8.813E5 1.43E0 2.3724E4/
+!Meng, Q., Lei, L., Lee, J., _ Burke, M. P. (2023). On the role of HNNO in NOx formation. Proceedings of the Combustion Institute.
+ONHN=N2+OH    1.0E0 0.0 0.0E0
+    PLOG/1.0E-3 2.591E5 -5.1E-1 1.0529E4/
+    PLOG/1.0E-2 1.158E6 -4.0E-1 1.1592E4/
+    PLOG/1.0E-1 1.04E6 -6.0E-2 1.2507E4/
+    PLOG/1.0E0 6.617E5 3.6E-1 1.359E4/
+    PLOG/1.0E1 2.643E7 3.3E-1 1.5729E4/
+    PLOG/1.0E2 3.663E11 -4.1E-1 1.9036E4/
+    PLOG/1.0E3 4.278E14 -8.9E-1 2.1729E4/
+!Meng, Q., Lei, L., Lee, J., _ Burke, M. P. (2023). On the role of HNNO in NOx formation. Proceedings of the Combustion Institute.
+OH+C-ONNH=H2NNO2    1.0E0 0.0 0.0E0
+    PLOG/1.0E-3 6.553E7 -1.75E0 1.2568E4/
+    PLOG/1.0E-2 9.286E12 -2.89E0 1.6148E4/
+    PLOG/1.0E-1 1.741E18 -4.09E0 1.8328E4/
+    PLOG/1.0E0 1.056E15 -2.98E0 8.9843E3/
+    PLOG/1.0E1 6.556E19 -4.01E0 3.2949E3/
+    PLOG/1.0E2 1.338E28 -5.85E0 3.4913E3/
+    PLOG/1.0E3 5.595E29 -5.79E0 5.2354E3/
+!Meng, Q., Lei, L., Lee, J., _ Burke, M. P. (2023). On the role of HNNO in NOx formation. Proceedings of the Combustion Institute.
+OH+C-ONNH=T-HNN(O)OH    1.0E0 0.0 0.0E0
+    PLOG/1.0E-3 1.488E30 -7.88E0 3.6355E4/
+    PLOG/1.0E-2 1.556E31 -7.86E0 3.7492E4/
+    PLOG/1.0E-1 1.982E17 -3.91E0 2.034E4/
+    PLOG/1.0E0 9.555E9 -1.69E0 7.4E3/
+    PLOG/1.0E1 4.065E15 -2.94E0 2.0918E3/
+    PLOG/1.0E2 1.689E24 -4.8E0 2.3067E3/
+    PLOG/1.0E3 1.234E27 -5.0E0 3.7903E3/
+!Meng, Q., Lei, L., Lee, J., _ Burke, M. P. (2023). On the role of HNNO in NOx formation. Proceedings of the Combustion Institute.
+OH+C-ONNH=C-HNN(O)OH    1.0E0 0.0 0.0E0
+    PLOG/1.0E0 1.362E6 -7.6E-1 8.2376E3/
+    PLOG/1.0E1 4.287E13 -2.42E0 1.8567E3/
+    PLOG/1.0E2 2.784E24 -4.87E0 2.3687E3/
+    PLOG/1.0E3 6.31E27 -5.23E0 4.3457E3/
+!Meng, Q., Lei, L., Lee, J., _ Burke, M. P. (2023). On the role of HNNO in NOx formation. Proceedings of the Combustion Institute.
+OH+C-ONNH=NH2+NO2    1.0E0 0.0 0.0E0
+    PLOG/1.0E-3 1.503E14 -6.5E-1 6.263E2/
+    PLOG/1.0E-2 1.503E14 -6.5E-1 6.263E2/
+    PLOG/1.0E-1 1.503E14 -6.5E-1 6.263E2/
+    PLOG/1.0E0 1.503E14 -6.5E-1 6.263E2/
+    PLOG/1.0E1 1.508E14 -6.5E-1 6.2638E2/
+    PLOG/1.0E2 2.282E14 -7.0E-1 7.8421E2/
+    PLOG/1.0E3 2.896E15 -9.8E-1 2.5462E3/
+!Meng, Q., Lei, L., Lee, J., _ Burke, M. P. (2023). On the role of HNNO in NOx formation. Proceedings of the Combustion Institute.
+OH+C-ONNH=OH+T-ONNH    1.0E0 0.0 0.0E0
+    PLOG/1.0E-3 8.207E12 -3.0E-1 1.1591E3/
+    PLOG/1.0E-2 8.207E12 -3.0E-1 1.1592E3/
+    PLOG/1.0E-1 8.212E12 -3.0E-1 1.1594E3/
+    PLOG/1.0E0 8.255E12 -3.0E-1 1.1621E3/
+    PLOG/1.0E1 8.725E12 -3.1E-1 1.1895E3/
+    PLOG/1.0E2 1.678E13 -3.8E-1 1.5018E3/
+    PLOG/1.0E3 1.841E14 -6.5E-1 3.1752E3/
+!Meng, Q., Lei, L., Lee, J., _ Burke, M. P. (2023). On the role of HNNO in NOx formation. Proceedings of the Combustion Institute.
+OH+C-ONNH=H2O+N2O    1.0E0 0.0 0.0E0
+    DUP
+    PLOG/1.0E-3 5.957E14 -9.1E-1 6.6848E2/
+    PLOG/1.0E-2 5.956E14 -9.1E-1 6.6848E2/
+    PLOG/1.0E-1 5.957E14 -9.1E-1 6.6846E2/
+    PLOG/1.0E0 5.96E14 -9.1E-1 6.6823E2/
+    PLOG/1.0E1 5.993E14 -9.1E-1 6.6578E2/
+    PLOG/1.0E2 7.478E14 -9.4E-1 7.1078E2/
+    PLOG/1.0E3 6.756E15 -1.18E0 2.0885E3/
+!Meng, Q., Lei, L., Lee, J., _ Burke, M. P. (2023). On the role of HNNO in NOx formation. Proceedings of the Combustion Institute.
+OH+T-ONNH=H2NNO2    1.0E0 0.0 0.0E0
+    PLOG/1.0E-3 2.983E24 -6.22E0 1.2272E4/
+    PLOG/1.0E-2 1.462E22 -5.3E0 1.0109E4/
+    PLOG/1.0E-1 1.395E21 -4.77E0 6.9681E3/
+    PLOG/1.0E0 2.26E23 -5.11E0 3.5943E3/
+    PLOG/1.0E1 8.184E28 -6.26E0 3.4371E3/
+    PLOG/1.0E2 8.516E31 -6.68E0 5.3011E3/
+    PLOG/1.0E3 6.821E29 -5.71E0 7.2821E3/
+!Meng, Q., Lei, L., Lee, J., _ Burke, M. P. (2023). On the role of HNNO in NOx formation. Proceedings of the Combustion Institute.
+OH+T-ONNH=T-HNN(O)OH    1.0E0 0.0 0.0E0
+    PLOG/1.0E-3 1.423E21 -5.39E0 1.2576E4/
+    PLOG/1.0E-2 1.346E20 -4.83E0 1.1019E4/
+    PLOG/1.0E-1 9.962E16 -3.74E0 5.8754E3/
+    PLOG/1.0E0 3.008E19 -4.15E0 2.5387E3/
+    PLOG/1.0E1 7.81E24 -5.25E0 2.3096E3/
+    PLOG/1.0E2 1.264E28 -5.63E0 3.6405E3/
+    PLOG/1.0E3 2.57E27 -4.97E0 5.0601E3/
+!Meng, Q., Lei, L., Lee, J., _ Burke, M. P. (2023). On the role of HNNO in NOx formation. Proceedings of the Combustion Institute.
+OH+T-ONNH=C-HNN(O)OH    1.0E0 0.0 0.0E0
+    PLOG/1.0E-3 3.687E-56 1.51E1 -4.4419E4/
+    PLOG/1.0E-2 1.086E23 -5.5E0 3.4725E4/
+    PLOG/1.0E-1 6.926E15 -3.34E0 1.7962E4/
+    PLOG/1.0E0 4.913E10 -1.69E0 2.1953E3/
+    PLOG/1.0E1 9.493E21 -4.41E0 1.7419E3/
+    PLOG/1.0E2 7.222E27 -5.53E0 3.3886E3/
+    PLOG/1.0E3 4.628E27 -5.01E0 4.1318E3/
+!Meng, Q., Lei, L., Lee, J., _ Burke, M. P. (2023). On the role of HNNO in NOx formation. Proceedings of the Combustion Institute.
+OH+T-ONNH=NH2+NO2    1.0E0 0.0 0.0E0
+    PLOG/1.0E-3 2.247E16 -1.44E0 1.2339E3/
+    PLOG/1.0E-2 2.247E16 -1.44E0 1.2339E3/
+    PLOG/1.0E-1 2.249E16 -1.44E0 1.2343E3/
+    PLOG/1.0E0 2.273E16 -1.44E0 1.2387E3/
+    PLOG/1.0E1 3.517E16 -1.5E0 1.4082E3/
+    PLOG/1.0E2 1.432E18 -1.92E0 3.1721E3/
+    PLOG/1.0E3 8.17E18 -2.06E0 6.6555E3/
+!Meng, Q., Lei, L., Lee, J., _ Burke, M. P. (2023). On the role of HNNO in NOx formation. Proceedings of the Combustion Institute.
+OH+T-ONNH=H2O+N2O    1.0E0 0.0 0.0E0
+    DUP
+    PLOG/1.0E-3 9.169E13 -5.5E-1 3.3827E2/
+    PLOG/1.0E-2 9.168E13 -5.5E-1 3.3826E2/
+    PLOG/1.0E-1 9.167E13 -5.5E-1 3.3814E2/
+    PLOG/1.0E0 9.145E13 -5.5E-1 3.3672E2/
+    PLOG/1.0E1 9.302E13 -5.5E-1 3.3804E2/
+    PLOG/1.0E2 2.207E14 -6.5E-1 7.2023E2/
+    PLOG/1.0E3 2.239E14 -6.2E-1 1.7385E3/
+!Meng, Q., Lei, L., Lee, J., _ Burke, M. P. (2023). On the role of HNNO in NOx formation. Proceedings of the Combustion Institute.
+O2+T-ONNH=HO2+N2O    3.664E-2 4.341 1.195248E4
+!Meng, Q., Lei, L., Lee, J., _ Burke, M. P. (2023). On the role of HNNO in NOx formation. Proceedings of the Combustion Institute.
+O2+T-ONNH=HNO2+NO    2.868E3 2.444 3.10432E4
+!Meng, Q., Lei, L., Lee, J., _ Burke, M. P. (2023). On the role of HNNO in NOx formation. Proceedings of the Combustion Institute.
+O2+T-ONNH=O2+C-ONNH    1.05E4 2.09 3.721257E4
+!Meng, Q., Lei, L., Lee, J., _ Burke, M. P. (2023). On the role of HNNO in NOx formation. Proceedings of the Combustion Institute.
+O2+C-ONNH=HO2+N2O    9.874E0 3.498 1.47723E4
+!Meng, Q., Lei, L., Lee, J., _ Burke, M. P. (2023). On the role of HNNO in NOx formation. Proceedings of the Combustion Institute.
+O2+C-ONNH=HNO2+NO    5.845E4 2.189 3.116557E4
+!Meng, Q., Lei, L., Lee, J., _ Burke, M. P. (2023). On the role of HNNO in NOx formation. Proceedings of the Combustion Institute.
+O2+ONHN=HNO+NO2    3.0E13 0.0 0.0E0
+!Meng, Q., Lei, L., Lee, J., _ Burke, M. P. (2023). On the role of HNNO in NOx formation. Proceedings of the Combustion Institute.
+O2+ONHN=HO2+N2O    3.0E13 0.0 0.0E0
+!Meng, Q., Lei, L., Lee, J., _ Burke, M. P. (2023). On the role of HNNO in NOx formation. Proceedings of the Combustion Institute.
+H+T-ONNH=NH2+NO    4.0E13 0.0 0.0E0
+!Meng, Q., Lei, L., Lee, J., _ Burke, M. P. (2023). On the role of HNNO in NOx formation. Proceedings of the Combustion Institute.
+T-ONNH+H=N2+OH+H    1.5E13 0.0 0.0E0
+!Meng, Q., Lei, L., Lee, J., _ Burke, M. P. (2023). On the role of HNNO in NOx formation. Proceedings of the Combustion Institute.
+H+T-ONNH=H2O+N2    6.0E12 0.0 0.0E0
+!Meng, Q., Lei, L., Lee, J., _ Burke, M. P. (2023). On the role of HNNO in NOx formation. Proceedings of the Combustion Institute.
+H+C-ONNH=H+T-ONNH    1.0E13 0.0 0.0E0
+!Meng, Q., Lei, L., Lee, J., _ Burke, M. P. (2023). On the role of HNNO in NOx formation. Proceedings of the Combustion Institute.
+H+C-ONNH=NH2+NO    1.8E13 0.0 0.0E0
+!Meng, Q., Lei, L., Lee, J., _ Burke, M. P. (2023). On the role of HNNO in NOx formation. Proceedings of the Combustion Institute.
+C-ONNH+H=N2+OH+H    6.0E11 0.0 0.0E0
+!Meng, Q., Lei, L., Lee, J., _ Burke, M. P. (2023). On the role of HNNO in NOx formation. Proceedings of the Combustion Institute.
+H+C-ONNH=H2O+N2    9.0E11 0.0 0.0E0
+!Meng, Q., Lei, L., Lee, J., _ Burke, M. P. (2023). On the role of HNNO in NOx formation. Proceedings of the Combustion Institute.
+H+ONHN=NH2+NO    6.0E13 0.0 0.0E0
+!Meng, Q., Lei, L., Lee, J., _ Burke, M. P. (2023). On the role of HNNO in NOx formation. Proceedings of the Combustion Institute.
+ONHN+H=N2+OH+H    6.0E13 0.0 0.0E0
+!Meng, Q., Lei, L., Lee, J., _ Burke, M. P. (2023). On the role of HNNO in NOx formation. Proceedings of the Combustion Institute.
+H+ONHN=H2O+N2    6.0E13 0.0 0.0E0
+!Meng, Q., Lei, L., Lee, J., _ Burke, M. P. (2023). On the role of HNNO in NOx formation. Proceedings of the Combustion Institute.
+OH+T-ONNH=HNOH+NO    3.0E13 0.0 0.0E0
+!Meng, Q., Lei, L., Lee, J., _ Burke, M. P. (2023). On the role of HNNO in NOx formation. Proceedings of the Combustion Institute.
+OH+C-ONNH=HNOH+NO    3.0E13 0.0 0.0E0
+!Meng, Q., Lei, L., Lee, J., _ Burke, M. P. (2023). On the role of HNNO in NOx formation. Proceedings of the Combustion Institute.
+OH+ONHN=HNOH+NO    3.0E13 0.0 0.0E0
+!Meng, Q., Lei, L., Lee, J., _ Burke, M. P. (2023). On the role of HNNO in NOx formation. Proceedings of the Combustion Institute.
+OH+T-ONNH=H2O+N2O    3.0E13 0.0 0.0E0
+    DUP
+!Meng, Q., Lei, L., Lee, J., _ Burke, M. P. (2023). On the role of HNNO in NOx formation. Proceedings of the Combustion Institute.
+OH+C-ONNH=H2O+N2O    3.0E13 0.0 0.0E0
+    DUP
+!Meng, Q., Lei, L., Lee, J., _ Burke, M. P. (2023). On the role of HNNO in NOx formation. Proceedings of the Combustion Institute.
+OH+ONHN=H2O+N2O    3.0E13 0.0 0.0E0
+!Meng, Q., Lei, L., Lee, J., _ Burke, M. P. (2023). On the role of HNNO in NOx formation. Proceedings of the Combustion Institute.
+O+T-ONNH=HNO+NO    6.0E13 0.0 0.0E0
+!Meng, Q., Lei, L., Lee, J., _ Burke, M. P. (2023). On the role of HNNO in NOx formation. Proceedings of the Combustion Institute.
+O+C-ONNH=HNO+NO    6.0E13 0.0 0.0E0
+!Meng, Q., Lei, L., Lee, J., _ Burke, M. P. (2023). On the role of HNNO in NOx formation. Proceedings of the Combustion Institute.
+O+ONHN=HNO+NO    6.0E13 0.0 0.0E0
+!Meng, Q., Lei, L., Lee, J., _ Burke, M. P. (2023). On the role of HNNO in NOx formation. Proceedings of the Combustion Institute.
+O+T-ONNH=N2O+OH    6.0E13 0.0 0.0E0
+!Meng, Q., Lei, L., Lee, J., _ Burke, M. P. (2023). On the role of HNNO in NOx formation. Proceedings of the Combustion Institute.
+O+C-ONNH=N2O+OH    6.0E13 0.0 0.0E0
+!Meng, Q., Lei, L., Lee, J., _ Burke, M. P. (2023). On the role of HNNO in NOx formation. Proceedings of the Combustion Institute.
+O+ONHN=N2O+OH    6.0E13 0.0 0.0E0
+!Meng, Q., Lei, L., Lee, J., _ Burke, M. P. (2023). On the role of HNNO in NOx formation. Proceedings of the Combustion Institute.
+T-ONNH=ONHN    1.0E0 0.0 0.0E0
+    PLOG/1.0E0 3.75E-15 3.686E0 1.650563E4/
+    PLOG/1.0E1 7.037E-1 4.03E-1 3.040642E4/
+    PLOG/1.0E2 7.635E0 9.07E-1 3.346763E4/
+    PLOG/1.0E3 7.842E3 1.009E0 3.821185E4/
+!Meng, Q., Lei, L., Lee, J., _ Burke, M. P. (2023). On the role of HNNO in NOx formation. Proceedings of the Combustion Institute.
+C-ONNH=ONHN    1.0E0 0.0 0.0E0
+    PLOG/1.0E0 6.19E-27 6.975E0 2.48055E3/
+    PLOG/1.0E1 3.93E-6 1.913E0 2.309534E4/
+    PLOG/1.0E2 1.031E-3 1.987E0 2.655578E4/
+    PLOG/1.0E3 9.237E0 1.802E0 3.159909E4/
+!++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+!\END_KINETICS_MODULE: NH3+NOX
+!++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++

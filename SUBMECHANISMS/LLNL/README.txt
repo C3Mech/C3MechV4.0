@@ -1,0 +1,15 @@
+"LLNL_BLOCK" contains the chemistry specific to
+the following submodels:
+ - IC8: "iso-octane"
+ - IC8D3: "2,4,4-trimethyl-2-pentene"
+ - IC8D4: "2,4,4-trimethyl-1-pentene"
+ - C8H18-223: "2,2,3-trimethylpentane"
+ - C8H18-234: "2,3,4-trimethylpentane"
+ - NC8H18: "n-octane"
+ - NC9H20: "n-nonane"
+ - NC10H22: "n-decane"
+ - NC11H24: "n-undecane"
+ - NC12H26: "n-dodecane"
+ - C11H24-2: "2-methyldecane"
+ - COC(VO)OC: "dimethyl carbonate"
+ - CY(COCVOOC): "ethylene carbonate"
