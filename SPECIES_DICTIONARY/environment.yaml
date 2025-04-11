@@ -1,0 +1,15 @@
+name: c3
+
+channels:
+  - conda-forge
+ 
+dependencies:
+  - python=3.8
+  - pip
+  - rdkit
+  - cairosvg
+  - gitpython
+  - pyyaml
+  - pandas
+  - numpy
+  - yapf
