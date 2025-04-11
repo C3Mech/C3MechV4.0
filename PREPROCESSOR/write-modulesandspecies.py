@@ -7,6 +7,8 @@ from shutil import copyfile
 def copy_llnl(dest_dir):
   src_dir = os.path.join("..", "SUBMECHANISMS", "LLNL")
   copyfile(os.path.join(src_dir, "LLNL_BLOCK.CKI"), os.path.join(dest_dir, "LLNL_BLOCK.CKI"))
+  copyfile(os.path.join(src_dir, "LLNL_BLOCK_HT.CKI"), os.path.join(dest_dir, "LLNL_BLOCK_HT.CKI"))
+  copyfile(os.path.join(src_dir, "LLNL_BLOCK_DMC_EC.CKI"), os.path.join(dest_dir, "LLNL_BLOCK_DMC_EC.CKI"))
 
 def copy_pah(dest_dir):
   src_dir = os.path.join("..", "SUBMECHANISMS", "ITV_POLIMI")
