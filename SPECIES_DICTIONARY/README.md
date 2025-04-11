@@ -1,7 +1,7 @@
 # Species dictionary
 
-All species in the C3 model are defined in `species_dict.csv`. This CSV file has
-seven columns with the following meaning:
+All species in the C3MechV4.0 are defined in `species_dict.csv`. This CSV file has
+seven columns with the following meanings:
 - `model_name`: name used in the CHEMKIN files (upper case ASCII string)
 - `inchi`:  International Chemical Identifier (ASCII string)
 - `smiles`: a string following the simplified molecular-input line-entry system 
@@ -42,8 +42,8 @@ The following commands generate the output file `species_dict.pdf`:
 
 ```sh
 # Select the relevant submodels for the species dictionary the yaml input (default is submodels.yaml).
-# Species images will only be updated if older than the species dictionary csv file. Erase the content 
-# of the output directory to force a regeneration of the species images. 
+# Species images will only be updated if they are older than the species dictionary CSV file. 
+# Erase the content of the output directory to force a regeneration of the species images. 
 ./make_species_dict.py
 # use ./make_species_dict.py -d to perform checks without output generation (faster)
 cd output
