@@ -14,6 +14,14 @@ This directory provides the workflow to compile sub-models into a single file in
    ```
 The command writes the files `C3Mech.CKI,` `C3Mech.THERM,` and `C3Mech.TRAN` to the `output/` directory.
 
+## Installing dependencies
+
+You can install the dependencies, for example, with:
+
+```sh
+pip3 install pyyaml --user
+```
+
 ## Notes and recommendations
 
 - **Selecting necessary blocks:** Selecting only the necessary module blocks facilitates and speeds up kinetic simulations. 
