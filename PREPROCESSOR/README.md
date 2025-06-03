@@ -18,6 +18,6 @@ The command writes the files `C3Mech.CKI,` `C3Mech.THERM,` and `C3Mech.TRAN` to 
 
 - **Selecting necessary blocks:** Selecting only the necessary module blocks facilitates and speeds up kinetic simulations. 
 - **User responsibility:** The user must select an appropriate model subset for a simulation case. 
-- **Preselected combinations:** The `preselection/` directory provides frequently used sub-model combinations. These subsets correspond to those used in associated publication.
+- **Preselected combinations:** The `preselection/` directory provides frequently used sub-model combinations. These subsets correspond to those used in the associated publication.
 
 If you have further questions or need additional help, please feel free to open an issue or [contact us](r.langer@itv.rwht-aachen.de).
