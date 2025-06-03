@@ -1,26 +1,25 @@
 # C3MechV4.0
-C3MechV4.0 release associated with the publication: XXXXXX
+
+C3MechV4.0 release associated with the publication: **XXXXXX**.
 
 # Highlights
-•	Unified combustion kinetic model for a wide range of fuel surrogate mixtures
 
-•	Updated version of the widely adopted C3MechV3.3 combustion kinetic model
-
-•	Simulates conventional and renewable fuels (alkanes, H2, NH3, DME, DMC/EC)
-
-•	Extensive model testing for both pure fuels and fuel mixture experiments
-
-
+- **Unified combustion kinetic model** covering a wide range of fuel surrogate mixtures  
+- **Updated version** of the widely adopted C3MechV3.3 combustion kinetic model  
+- **Supports both conventional and renewable fuels** (alkanes, H₂, NH₃, DME, DMC/EC)  
+- **Extensive testing** for pure fuels and fuel mixture experiments  
 
 # Repository structure
 
-
 ### SPECIES_DICTIONARY:
-The species dictionary of C3Mech. The script can be used to check constraints and generate a PDF. 
+Contains the species dictionary for C3Mech.  
+You can run the provided script to check constraints and generate a PDF overview of species.
 
 ### SUBMECHANISMS:
-This directory includes all the latest (work-in-progress) submechanisms of each group. 
-SOURCE-C3Mech.THERM/.TRAN are the only THERM/TRAN files to edit. write-modulesandspecies.py in PREPROCESSOR will read these files and generate "cleaned" THERM/TRAN files based on species included in the given compiled mechanism. Indications on the recommended modules for different fuel types are found in PREPROCESSOR/README.md.
+Holds the latest submechanisms for each group.  
+- **SOURCE-C3Mech.THERM** and **SOURCE-C3Mech.TRAN** are the only THERM and TRAN files that require editing. The script `compile_c3mech.py` in the `PREPROCESSOR` directory reads these files and generates cleaned versions based on the species included in the final compiled mechanism.  
+- Recommended modules for various fuel types are noted in the `PREPROCESSOR/submodels.yaml`.
 
-### PREPROCESSOR: 
-Mechanism compile can be done in this directory. Submechanisms and thermochemistry/transport properties will be extracted from the SUBMECHANISMS directory. Detailed instructions are found in the corresponding README.md file.
+### PREPROCESSOR:
+Used to compile mechanisms. Submechanisms, thermochemistry, and transport properties are extracted from the `SUBMECHANISMS` directory. Please refer to the `PREPROCESSOR/README.md` for detailed instructions on how to compile mechanisms. Within `PREPROCESSOR`, the **`preselection/`** subdirectory provides a set of commonly used sub-model combinations. These files are offered for convenience so that they can be downloaded and used directly.
+
