@@ -1,0 +1,66 @@
+# the yaml_tag is used in the python script (don't change this)
+!SubModelFiles
+
+# A core mechanism is required. The choice depends only on the employed 
+# simulation code. The following version works with Cantera or FlameMaster:
+core: NUIG/LT-HT/NUIG_C0_LT-HT_Cantera.MECH
+# The following option can be used CHEMKIN or OpenSMOKE++:
+#core: NUIG/LT-HT/NUIG_C0_LT-HT.MECH
+
+submechs:
+## 
+## C3MechV4.0 (all sub-models):
+
+  - NUIG/LT-HT/NUIG_C1-C2_LT-HT.MECH 
+  - NUIG/LT-HT/NUIG_MTBE_LT-HT.MECH
+  - NUIG/LT-HT/NUIG_C-N_LT-HT.MECH
+  - NUIG/LT-HT/NUIG_C3-C4_LT-HT.MECH
+  - NUIG/LT-HT/NUIG_C5_LT-HT.MECH
+  - NUIG/LT-HT/NUIG_C5cy_LT-HT.MECH
+  - NUIG/LT-HT/NUIG_C6_LT-HT.MECH
+  - NUIG/LT-HT/NUIG_C6cy_LT-HT.MECH
+  - NUIG/LT-HT/NUIG_C7_LT-HT.MECH
+  - NUIG/LT-HT/NUIG_N_LT-HT.MECH
+  - ITV_POLIMI/PAH_BLOCK.CKI
+  - LLNL/LLNL_BLOCK_DMC_EC.CKI
+  - LLNL/LLNL_BLOCK.CKI
+
+## C0_C6_HT_PAH (high-temperature oxidation chemistry of C0-C5 fuel 
+## components with mono- and polycyclic aromatic hydrocarbon):
+## 
+##  for unstretched premixed flames and counterflow flames,
+##  LBVs + high-temperature flow reactors and shock tube
+ 
+##  - NUIG/LT-HT/NUIG_C1-C2_LT-HT.MECH  
+##  - NUIG/HT/NUIG_C3-C4_HT.MECH   
+##  - NUIG/HT/NUIG_C5cy_HT.MECH  
+##  - NUIG/HT/NUIG_C5_HT.MECH  
+##  - NUIG/HT/NUIG_C6cy_HT.MECH  
+##  - ITV_POLIMI/PAH_BLOCK.CKI 
+
+## C0_C6_PAH (oxidation chemistry of C0-C6 fuel 
+## components with mono- and polycyclic aromatic hydrocarbon):
+##
+## for low-temperature jet-stirred and flow reactor oxidation cases and 
+## simulations of rapid compression machine (RCM) experiments
+
+##  - NUIG/LT-HT/NUIG_C1-C2_LT-HT.MECH  
+##  - NUIG/LT-HT/NUIG_C3-C4_LT-HT.MECH  
+##  - NUIG/LT-HT/NUIG_C5cy_LT-HT.MECH  
+##  - NUIG/LT-HT/NUIG_C5_LT-HT.MECH  
+##  - NUIG/LT-HT/NUIG_C6cy_LT-HT.MECH  
+##  - ITV_POLIMI/PAH_BLOCK.CKI  
+
+
+## TPRF 
+## Toluene Primary Reference Fuel mixtures (flow reactors and RCM)
+
+##  - NUIG/LT-HT/NUIG_C1-C2_LT-HT.MECH  
+##  - NUIG/LT-HT/NUIG_C3-C4_LT-HT.MECH  
+##  - NUIG/LT-HT/NUIG_C5cy_LT-HT.MECH  
+##  - NUIG/LT-HT/NUIG_C5_LT-HT.MECH  
+##  - NUIG/LT-HT/NUIG_C6cy_LT-HT.MECH  
+##  - NUIG/LT-HT/NUIG_C6_LT-HT.MECH  
+##  - NUIG/LT-HT/NUIG_C7_LT-HT.MECH  
+##  - ITV_POLIMI/PAH_BLOCK.CKI  
+##  - LLNL/LLNL_BLOCK.CKI

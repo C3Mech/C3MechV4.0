@@ -14,7 +14,7 @@ from shutil import copyfile
 from pathlib import Path
 
 sys.path.append("..")
-write_species = importlib.import_module("PREPROCESSOR.write-modulesandspecies")
+write_species = importlib.import_module("PREPROCESSOR.compile_c3mech")
 
 from rdkit import Chem
 from rdkit.Chem import AllChem
