@@ -7,7 +7,7 @@
 - A compiler script to generate CHEMKIN mechanisms from user-selected sub-models  
 - Several precompiled sub-model sets (in CHEMKIN and Cantera YAML) for direct use  
 
-## Repository Contents
+## Repository contents
 
 1. **SUBMECHANISMS**  
 This directory contains sub-models ("mechanism" files with kinetic data) organized by the research groups that developed them and the jointly used files `SOURCE-C3Mech.THERM` and `SOURCE-C3Mech.TRAN` that provide all thermochemistry and transport data for C3MechV4.0. These files are recommended as a starting point for model development based on C3MechV4.0.
