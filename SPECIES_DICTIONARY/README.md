@@ -20,6 +20,20 @@ Simplified identifiers neglecting stereochemistry information derived from the
 values in the `inchi` and `smiles` columns must still be RDKit compatible and 
 consistent if the value in the `stereochemistry` column is `0`.
 
+# How to use
+
+The following commands generate the output file `species_dict.pdf`:
+
+```sh
+# Select the relevant submodels for the species dictionary the yaml input (default is submodels.yaml).
+# Species images will only be updated if they are older than the species dictionary CSV file. 
+# Erase the content of the output directory to force a regeneration of the species images. 
+./make_species_dict.py
+# use ./make_species_dict.py -d to perform checks without output generation (faster)
+cd output
+pdflatex species_dict.tex
+```
+
 # Installing dependencies
 
 You can install the dependencies, for example, with:
@@ -36,16 +50,5 @@ conda env create -f environment.yaml
 
 The scripts were tested with Python versions 3.8.5 and 3.9.6.
 
-# Generating the species dictionary
+If you have further questions or need additional help, please feel free to open an issue or [contact us](r.langer@itv.rwth-aachen.de).
 
-The following commands generate the output file `species_dict.pdf`:
-
-```sh
-# Select the relevant submodels for the species dictionary the yaml input (default is submodels.yaml).
-# Species images will only be updated if they are older than the species dictionary CSV file. 
-# Erase the content of the output directory to force a regeneration of the species images. 
-./make_species_dict.py
-# use ./make_species_dict.py -d to perform checks without output generation (faster)
-cd output
-pdflatex species_dict.tex
-```
