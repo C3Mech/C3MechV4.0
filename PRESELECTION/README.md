@@ -13,3 +13,5 @@ It covers the oxidation chemistry of C0–C6 fuel components with PAHs and is in
 
 ## 4. TPRF
 This sub-model combination focuses on Toluene Primary Reference Fuel (TPRF) mixtures and includes PAH chemistry.
+
+For questions or suggestions, please open an issue or [contact us](mailto:r.langer@itv.rwth-aachen.de).
