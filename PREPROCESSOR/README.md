@@ -28,4 +28,4 @@ pip3 install pyyaml --user
 - **User responsibility:** The user must select an appropriate model subset for a simulation case. 
 - **Preselected combinations:** The `preselection/` directory provides frequently used sub-model combinations. These subsets correspond to those used in the associated publication.
 
-If you have further questions or need additional help, please feel free to open an issue or [contact us](r.langer@itv.rwht-aachen.de).
+If you have further questions or need additional help, please feel free to open an issue or [contact us](r.langer@itv.rwth-aachen.de).
