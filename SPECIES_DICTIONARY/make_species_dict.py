@@ -363,13 +363,20 @@ def check_inchi(lines, i, inchis):
   return -1, "", ""
 
 
+def mol_to_canonical_inchi(mol):
+  # The MolBlock includes radical-site information that RDKit's direct InChI
+  # interface can omit. InChI then correctly excludes stereochemistry on
+  # double bonds that resonate with those radical sites.
+  return Chem.MolBlockToInchi(Chem.MolToMolBlock(mol))
+
+
 def check_inchi_smiles_consistency(inchi, smiles, species, simplification=""):
   mol = Chem.MolFromSmiles(smiles)
   if (not mol):
     rdkit_error("SMILES" + simplification, smiles, species)
     return True
 
-  inchi_from_smiles = Chem.MolToInchi(mol)
+  inchi_from_smiles = mol_to_canonical_inchi(mol)
   if (get_real_inchi(inchi) != inchi_from_smiles):
     #print(inchi)
     print("inchi" + simplification + ":", get_real_inchi(inchi))
